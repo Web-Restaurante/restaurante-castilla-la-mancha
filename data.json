@@ -26,8 +26,12 @@
         "nombre": "Cuerva",
         "precio": 6.50,
         "descripcion": "Bebida tradicional de Castilla-La Mancha, elaborada a base de vino, frutas y otros ingredientes que aportan un sabor fresco, dulce y aromático. Es una bebida típica para compartir y disfrutar en reuniones y celebraciones.",
-        "alergenos": ["sulfitos"]
+        "alergenos": ["sulfitos"] 
+        
+  
+      
       },
+    
       {
         "nombre": "Licor de guindas",
         "precio": 5.50,
@@ -147,7 +151,7 @@
         "precio": 9.50,
         "descripcion": "Plato tradicional de Castilla-La Mancha elaborado con tomate, pimiento, calabacín, cebolla y aceite de oliva. Cocinado lentamente para concentrar sus sabores, es una receta sencilla, casera y llena de tradición manchega.",
         "alergenos": []
-      }
+      } 
     ],
     "postres": [
       {
