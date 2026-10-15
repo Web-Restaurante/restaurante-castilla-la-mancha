@@ -1,0 +1,28 @@
+
+
+/* Forzar los colores de la página de reservas */
+.pagina-reservas {
+  background-color: #ffffff !important;
+}
+
+.cabecera-reservas {
+  background-color: #e87837 !important;
+  color: #38271d !important;
+}
+
+.foto-guiso {
+  background-color: #dfad60 !important;
+}
+
+.horario-restaurante {
+  background-color: #f5eee3 !important;
+  color: #292d2b !important;
+}
+
+.formulario-reservas button {
+  background-color: #292d2b !important;
+  color: #ffffff !important;
+}
+
+
+
