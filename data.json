@@ -1,0 +1,147 @@
+{
+  "restaurante": {
+    "nombre": "Raíz Culinaria",
+    "tipoCocina": "Cocina de Castilla-La Mancha",
+    "frase": "Tradición que se disfruta en cada bocado."
+  },
+  "categorias": [
+    { "id": "entrantes", "nombre": "Entrantes" },
+    { "id": "principales", "nombre": "Principales" },
+    { "id": "postres", "nombre": "Postres" },
+    { "id": "bodega", "nombre": "Bodega" }
+  ],
+  "platos": [
+    {
+      "id": 1,
+      "categoria": "entrantes",
+      "nombre": "Pisto manchego",
+      "descripcion": "Hortalizas de la huerta pochadas a fuego lento, con huevo frito y pan tostado.",
+      "precio": 9.5,
+      "imagen": "img/platos-raiz/pisto manchego-entrante_8_11zon.webp",
+      "alt": "Plato de pisto manchego con huevo frito",
+      "alergenos": ["huevo", "gluten"],
+      "destacado": true
+    },
+    {
+      "id": 2,
+      "categoria": "entrantes",
+      "nombre": "Pipirrana de lomo de atún",
+      "descripcion": "Ensalada fresca de tomate, pimiento y pepino con lomo de atún.",
+      "precio": 12,
+      "imagen": "img/platos-raiz/pipirrana-de-lomo-de-atun-balfego_7_11zon.webp",
+      "alt": "Pipirrana con lomo de atún",
+      "alergenos": ["pescado"],
+      "destacado": false
+    },
+    {
+      "id": 3,
+      "categoria": "entrantes",
+      "nombre": "Berenjenas de Almagro",
+      "descripcion": "Berenjenas encurtidas con pimentón y comino, receta tradicional.",
+      "precio": 8.5,
+      "imagen": "img/platos-raiz/berenjenas-de-almagro_11_11zon.webp",
+      "alt": "Berenjenas de Almagro",
+      "alergenos": [],
+      "destacado": false
+    },
+    {
+      "id": 4,
+      "categoria": "principales",
+      "nombre": "Carcamusas",
+      "descripcion": "Guiso de cerdo con tomate y guisantes, un clásico toledano.",
+      "precio": 14.5,
+      "imagen": "img/platos-raiz/carcamusas_12_11zon.webp",
+      "alt": "Cazuela de carcamusas",
+      "alergenos": [],
+      "destacado": true
+    },
+    {
+      "id": 5,
+      "categoria": "principales",
+      "nombre": "Cordero asado",
+      "descripcion": "Paletilla de cordero lechal asada al horno con patatas panaderas.",
+      "precio": 19,
+      "imagen": "img/platos-raiz/portada.jpg",
+      "alt": "Paletilla de cordero asada",
+      "alergenos": [],
+      "destacado": false
+    },
+    {
+      "id": 6,
+      "categoria": "principales",
+      "nombre": "Gazpacho manchego",
+      "descripcion": "Guiso de carne de caza con tortas de pan ácimo.",
+      "precio": 16,
+      "imagen": "img/platos-raiz/portada.jpg",
+      "alt": "Plato de gazpacho manchego",
+      "alergenos": ["gluten"],
+      "destacado": false
+    },
+    {
+      "id": 7,
+      "categoria": "postres",
+      "nombre": "Miguelitos de La Roda",
+      "descripcion": "Bizcocho relleno de crema pastelera, dulce típico de La Roda.",
+      "precio": 5.5,
+      "imagen": "img/platos-raiz/portada.jpg",
+      "alt": "Miguelitos de La Roda",
+      "alergenos": ["gluten", "huevo", "lactosa"],
+      "destacado": false
+    },
+    {
+      "id": 8,
+      "categoria": "postres",
+      "nombre": "Flores manchegas",
+      "descripcion": "Dulce frito de masa fina con miel, tradición de Carnaval.",
+      "precio": 5,
+      "imagen": "img/platos-raiz/portada.jpg",
+      "alt": "Flores manchegas con miel",
+      "alergenos": ["gluten", "huevo"],
+      "destacado": false
+    },
+    {
+      "id": 9,
+      "categoria": "postres",
+      "nombre": "Tarta de queso manchego",
+      "descripcion": "Cremosa, con queso curado de oveja y mermelada de higo.",
+      "precio": 6.5,
+      "imagen": "img/platos-raiz/portada.jpg",
+      "alt": "Porción de tarta de queso manchego",
+      "alergenos": ["lactosa", "huevo", "gluten"],
+      "destacado": false
+    },
+    {
+      "id": 10,
+      "categoria": "bodega",
+      "nombre": "Vino tinto D.O. La Mancha",
+      "descripcion": "Crianza de tempranillo con notas de fruta roja y madera.",
+      "precio": 18,
+      "imagen": "img/platos-raiz/portada.jpg",
+      "alt": "Botella de vino tinto de La Mancha",
+      "alergenos": ["sulfitos"],
+      "destacado": false
+    },
+    {
+      "id": 11,
+      "categoria": "bodega",
+      "nombre": "Licor de guindas",
+      "descripcion": "Licor artesano de guindas maceradas, dulce y aromático.",
+      "precio": 4.5,
+      "imagen": "img/platos-raiz/plato-principal/licor-de-guindas_2_11zon.webp",
+      "alt": "Copa de licor de guindas",
+      "alergenos": [],
+      "destacado": false
+    },
+    {
+      "id": 12,
+      "categoria": "bodega",
+      "nombre": "Licor de lavanda",
+      "descripcion": "Licor floral elaborado con la lavanda de la Alcarria.",
+      "precio": 4.5,
+      "imagen": "img/platos-raiz/bebidas/licor-lavanda_3_11zon.webp",
+      "alt": "Copa de licor de lavanda",
+      "alergenos": [],
+      "destacado": false
+    }
+  ]
+}

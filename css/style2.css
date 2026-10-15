@@ -1,0 +1,949 @@
+
+/* ========================================
+   1. RESET
+======================================== */
+
+/* Selecciona todos los elementos, antes y después */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* Incluye el padding y border en el ancho total */
+    margin: 0;
+    /* Elimina márgenes heredados */
+    padding: 0;
+    /* Elimina rellenos heredados */
+}
+
+
+/* ========================================
+   2. VARIABLES
+======================================== */
+
+:root {
+    /* Heading */
+    --font-heading-family: "brandon-grotesque", sans-serif;
+    --font-heading-style: normal;
+    --font-heading-weight: 400;
+    --font-heading-weight-bold: 700;
+    --font-heady-size-mobile: 30px;
+    --font-heady-size-desktop: 40px;
+
+    /* Text */
+    --font-body-family: "baskerville-display-pt", serif;
+    --font-body-style: normal;
+    --font-body-weight: 400;
+    --font-body-weight-bold: 700;
+    --font-body-size-mobile: 12px;
+    --font-body-size-desktop: 18px;
+
+    /* Paleta de colores */
+
+    /* Color Primario | Naranja */
+    --color-primary-orange-700: #873d12;
+    --color-primary-orange-600: #b45118;
+    --color-primary-orange-main: #e57b3d;
+    --color-primary-orange-400: #e7844b;
+    --color-primary-orange-300: #eda378;
+    --color-primary-orange-200: #f3c2a5;
+    --color-primary-orange-100: #f9e0d2;
+    --color-primary-orange-50: #fcf0e9;
+
+    /* Color Primario | Amarillo */
+    --color-primary-yellow-700: #7d591c;
+    --color-primary-yellow-600: #a67726;
+    --color-primary-yellow-500: #d0952f;
+    --color-primary-yellow-main: #d9aa59;
+    --color-primary-yellow-300: #e3bf82;
+    --color-primary-yellow-200: #ecd5ac;
+    --color-primary-yellow-100: #f6ead5;
+    --color-primary-yellow-50: #faf4ea;
+
+    /* Color Primario | Verde */
+    --color-primary-verde-700: #565742;
+    --color-primary-verde-main: #828363;
+    --color-primary-verde-500: #90916e;
+    --color-primary-verde-400: #a6a78b;
+    --color-primary-verde-300: #bcbda8;
+    --color-primary-verde-200: #d3d3c5;
+    --color-primary-verde-100: #e9e9e2;
+    --color-primary-verde-50: #f4f4f0;
+
+    /* Color Primario | Azul */
+    --color-primary-blue-700: #494c50;
+    --color-primary-blue-main: #696c71;
+    --color-primary-blue-500: #d0952f;
+    --color-primary-blue-400: #d9aa59;
+    --color-primary-blue-300: #e3bf82;
+    --color-primary-blue-200: #ecd5ac;
+    --color-primary-blue-100: #f6ead5;
+    --color-primary-blue-50: #faf4ea;
+
+    /* Line Height */
+    --line-height: 1.8;
+    --margin-bottom: 10px;
+}
+
+
+/* ========================================
+   3. ESTILOS GENERALES
+======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    font-style: var(--font-heading-style);
+}
+
+p,
+span,
+li,
+small,
+a {
+    font-size: var(--font-body-size-mobile);
+    font-family: var(--font-body-family);
+    line-height: var(--line-height);
+    margin-bottom: var(--margin-bottom);
+    font-weight: var(--font-body-weight);
+    font-style: var(--font-body-style);
+}
+
+a {
+    margin-bottom: 0;
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+ul li {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+li a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+/* ========================================
+   4. ESTRUCTURA GENERAL
+======================================== */
+
+.contenedor {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "hero"
+        "main"
+        "footer";
+}
+
+
+/* ========================================
+   5. HEADER Y NAVEGACIÓN
+======================================== */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: header;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+
+.logo {
+    padding-top: 20px;
+    width: 230px;
+}
+
+.logo-blanco {
+    display: none;
+}
+
+.button-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 3.75rem;
+    cursor: pointer;
+    color: black;
+    margin-bottom: 0;
+}
+
+.desktop {
+    display: none;
+}
+
+.menu-nav-mobile {
+    display: none;
+}
+
+.menu-nav-mobile.open {
+    display: flex;
+    flex-flow: column wrap;
+    position: absolute;
+    top: 128px;
+    left: 0;
+    box-shadow: 0px -2px var(--color-primary-yellow-main);
+    z-index: 50;
+    width: 100%;
+    padding-left: 40px;
+    background-color: #fff;
+}
+
+.menu-nav-mobile li {
+    width: 85%;
+}
+
+.menu-nav-mobile li a {
+    padding: 12px 0;
+    display: block;
+}
+
+.menu-nav-mobile li:hover {
+    border-bottom: 2px solid var(--color-primary-yellow-main);
+}
+
+.menu-nav-mobile li:hover a {
+    color: var(--color-primary-yellow-main);
+}
+
+.menu-nav-mobile li:last-child {
+    border-bottom: none;
+}
+
+
+/* ========================================
+   6. HERO GENERAL
+======================================== */
+
+.hero {
+    width: 100%;
+    background-image: url("../img/platos-raiz/berenjenas-de-almagro_11_11zon.webp");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-area: hero;
+    min-height: 80svh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Botón de reserva */
+
+button {
+    margin-bottom: 40px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    z-index: 15;
+}
+
+.reserva a {
+    display: block;
+    padding: 8px 15px;
+    letter-spacing: 0.8px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.reserva:hover {
+    background-color: var(--color-primary-orange-700);
+    border-color: var(--color-primary-orange-700);
+}
+
+.reserva:hover a {
+    color: var(--color-primary-orange-100);
+}
+
+
+/* ========================================
+   7. MAIN Y SECCIONES GENERALES
+======================================== */
+
+main,
+footer section {
+    padding: 20px 30px;
+}
+
+main section {
+    margin-bottom: 50px;
+}
+
+p {
+    padding: 20px 0;
+    font-size: var(--font-body-size-mobile);
+}
+
+
+/* ========================================
+   8. SECCIÓN SLIDER
+======================================== */
+
+.etiqueta,
+.patrocinadores {
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
+.etiqueta {
+    text-transform: uppercase;
+}
+
+.horizontal-line {
+    display: block;
+    color: var(--color-primary-orange-700);
+    border-top: 2px solid #873d12;
+    width: 50px;
+    margin: 1rem auto 2rem auto;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.contenedor-slider {
+    max-width: 850px;
+    overflow: hidden;
+    position: relative;
+}
+
+.contenedor-imagenes {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.contenedor-slider img {
+    width: 100%;
+    flex: 0 0 100%;
+    object-fit: cover;
+    object-position: center top;
+    scroll-snap-align: center;
+}
+
+.contenedor-imagenes::-webkit-scrollbar {
+    display: none;
+}
+
+/* Botones de navegación principales */
+
+.btn-navegacion-primario {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.flecha {
+    width: 40px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    border-color: transparent;
+    background-color: transparent;
+    color: #fff;
+    opacity: 0.5;
+    font-size: 18px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    pointer-events: auto;
+}
+
+.flecha:hover {
+    color: var(--color-primary-orange-700);
+    opacity: 1;
+}
+
+/* Indicadores secundarios */
+
+.btn-navegacion-secundario {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+    transform: translateX(-50%);
+}
+
+.btn-navegacion-secundario a {
+    width: 5rem;
+    height: 3px;
+    background-color: white;
+    border-radius: 2%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.btn-navegacion-secundario a:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn-navegacion-secundario a.activo {
+    opacity: 1;
+}
+
+
+/* ========================================
+   9. SECCIÓN ENTRANTES
+======================================== */
+
+.entrante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.entrante div {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.entrante p {
+    text-align: center;
+}
+
+.entrante .plato2,
+.entrante .plato3 {
+    display: none;
+}
+
+.entrante img,
+.vino img {
+    width: 65%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* ========================================
+   10. SECCIÓN VINO
+======================================== */
+
+.vino {
+    display: flex;
+    flex-direction: row;
+}
+
+.vino p {
+    width: 50%;
+    padding: 20px 0;
+    margin-bottom: 0;
+}
+
+.semicirculo-left,
+.semicirculo-right {
+    overflow: hidden;
+}
+
+.semicirculo-left {
+    /* clip-path: ellipse(65% 48% at 0% 50%); */
+    clip-path: circle(42% at 17% 50%);
+}
+
+.semicirculo-right {
+    clip-path: circle(42% at 83% 50%);
+}
+
+.semicirculo-left img,
+.semicirculo-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transform: translateX(-60px);
+}
+
+.semicirculo-right img {
+    transform: translateX(60px);
+}
+
+
+/* ========================================
+   11. SECCIÓN PATROCINADORES
+======================================== */
+
+.patrocinadores img {
+    width: 180px;
+}
+
+.patrocinadores div {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.patrocinadores .mobile-logo-vertical {
+    width: 140px;
+}
+
+.patrocinadores .desktop-logo-horizontal {
+    display: none;
+}
+
+.patrocinadores img:nth-child(3) {
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   12. FOOTER
+======================================== */
+
+footer {
+    background-image: url("../img/platos-raiz/berenjenas-de-almagro_11_11zon.webp");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 30px;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+footer > * {
+    z-index: 10;
+}
+
+footer section {
+    color: #fff;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer p {
+    padding: 0;
+}
+
+footer h5 {
+    margin-bottom: 10px;
+}
+
+/* Footer: sección principal */
+
+.section-primario {
+    display: flex;
+    overflow: hidden;
+    flex-flow: column-reverse;
+    border-bottom: 1.5px solid #fff;
+}
+
+.logo-footer {
+    order: 2;
+}
+
+.logo-footer a {
+    display: block;
+    margin: auto;
+    width: fit-content;
+}
+
+footer .logo-footer img {
+    padding: 0;
+    width: 230px;
+}
+
+.horarios {
+    order: 1;
+    margin-top: -10px;
+}
+
+.section-primario div {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-primario .redes-sociales img {
+    width: 30px;
+}
+
+.redes-sociales div {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 15px;
+    justify-content: center;
+}
+
+/* Footer: sección secundaria */
+
+.section-secundario ul {
+    display: none;
+}
+
+.section-secundario div {
+    display: flex;
+    justify-content: center;
+}
+
+.section-secundario small {
+    font-size: 12px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   13. ESTILOS ESPECÍFICOS DE PÁGINAS
+======================================== */
+
+/* Página Inicio */
+/* Añadir aquí las reglas exclusivas de .contenedor-index */
+
+/* Página Carta */
+/* Añadir aquí las reglas exclusivas de .contenedor-carta */
+
+/* Página Reserva */
+/* Añadir aquí las reglas exclusivas de .contenedor-reserva */
+
+/* Página Sobre Nosotros */
+/* Añadir aquí las reglas exclusivas de .contenedor-sobre-nosotros */
+
+/* Página Contacto */
+
+/* Hero exclusivo de Contacto */
+.hero-contacto {
+    background-image: url("../img/platos-raiz/bebidas/licor-lavanda_3_11zon.webp");
+    background-position: center;
+    background-size: cover;
+}
+
+/* Añadir aquí las reglas de .section-contacto,
+   .contenedor-info, .icon-contacto e .info-contacto */
+
+
+/* ========================================
+   14. MEDIA QUERY: TABLET
+======================================== */
+
+@media (min-width: 600px) {
+
+    /* Generales */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: var(--font-heady-size-desktop);
+        line-height: 1;
+    }
+
+    p,
+    span,
+    li,
+    small,
+    a {
+        font-size: var(--font-body-size-desktop);
+    }
+
+    /* Slider y elementos generales */
+
+    .horizontal-line {
+        width: 150px;
+        margin: 2rem auto 3rem auto;
+        border-width: 3.5px;
+    }
+
+    /* Entrantes */
+
+    .entrante img {
+        width: 40%;
+        max-width: 400px;
+    }
+
+    /* Vino */
+
+    .vino {
+        justify-content: center;
+    }
+
+    .vino p {
+        width: 40%;
+    }
+
+    .semicirculo-left img,
+    .semicirculo-right img {
+        height: 300px;
+        max-height: 500px;
+        object-fit: contain;
+        max-width: 500px;
+    }
+
+    /* Footer */
+
+    footer h5 {
+        font-size: 13px;
+    }
+
+    /* Contacto: añadir aquí las adaptaciones necesarias */
+}
+
+
+/* ========================================
+   15. MEDIA QUERY: ESCRITORIO
+======================================== */
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+
+    /* Contenedor */
+
+    .contenedor {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            "hero hero hero"
+            "main main main"
+            "footer footer footer";
+    }
+
+    /* Header */
+
+    .logo-negro {
+        display: none;
+    }
+
+    .logo-blanco {
+        display: block;
+    }
+
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 40px;
+    }
+
+    header .logo {
+        width: 260px;
+        padding-top: 0;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    .menu-nav-desktop {
+        display: flex;
+        gap: 50px;
+        margin-top: 25px;
+    }
+
+    .desktop a {
+        display: block;
+        padding-bottom: 4px;
+        border-bottom: 2px solid transparent;
+        font-family: var(--font-heading-family);
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .desktop a:hover {
+        border-bottom: 2px solid var(--color-primary-orange-main);
+    }
+
+    /* Hero */
+
+    .hero {
+        position: relative;
+        height: 100svh;
+        grid-area: hero;
+        background-position: right bottom;
+    }
+
+    .reserva a {
+        font-size: 15px;
+    }
+
+    /* Presentación y slider */
+
+    .section-slider {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto 1fr;
+        grid-template-areas:
+            "etiqueta carrusel"
+            "titulo carrusel"
+            "linea carrusel"
+            "texto carrusel";
+        column-gap: 80px;
+    }
+
+    .section-slider .etiqueta {
+        grid-area: etiqueta;
+    }
+
+    .section-slider h3 {
+        grid-area: titulo;
+        font-size: 48px;
+        line-height: 1.3;
+    }
+
+    .section-slider .horizontal-line {
+        grid-area: linea;
+        margin: 2rem 0;
+    }
+
+    .section-slider p {
+        grid-area: texto;
+        max-width: 480px;
+    }
+
+    .section-slider .contenedor-slider {
+        grid-area: carrusel;
+        width: 100%;
+    }
+
+    .contenedor-imagenes {
+        aspect-ratio: 4/3;
+    }
+
+    /* Entrantes */
+
+    .entrante {
+        margin: 120px 0;
+    }
+
+    .entrante p {
+        max-width: 500px;
+    }
+
+    .entrante .plato1,
+    .entrante .plato2,
+    .entrante .plato3 {
+        display: flex;
+        flex-flow: row-reverse wrap;
+        gap: 50px;
+        width: 100%;
+    }
+
+    .entrante .plato1 {
+        justify-content: start;
+    }
+
+    .entrante .plato2 {
+        justify-content: end;
+        flex-flow: row;
+    }
+
+    .entrante .plato3 {
+        justify-content: start;
+    }
+
+    /* Vino */
+
+    .vino {
+        display: none;
+    }
+
+    /* Patrocinadores */
+
+    .patrocinadores div {
+        margin-top: 50px;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        gap: 6.25rem;
+    }
+
+    .patrocinadores .desktop-logo-horizontal {
+        width: 400px;
+    }
+
+    .patrocinadores div .mobile-logo-vertical {
+        display: none;
+    }
+
+    .patrocinadores div .desktop-logo-horizontal {
+        display: block;
+    }
+
+    .patrocinadores img {
+        width: 300px;
+    }
+
+    /* Estructura principal */
+
+    main {
+        grid-area: main;
+        padding: 100px 50px;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    footer .section-primario {
+        width: 1024px;
+        margin: 0 auto;
+    }
+
+    /* Contacto: añadir aquí las reglas específicas de escritorio */
+}
+

@@ -1,0 +1,1183 @@
+/* Selecciona todos los elementos, antes y después */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* Incluye el padding y border en el ancho total */
+  margin: 0;
+  /* Elimina márgenes heredados */
+  padding: 0;
+  /* Elimina rellenos heredados */
+}
+
+/* --- */
+
+/* Variables */
+:root {
+  /* Heading */
+  --font-heading-family: "brandon-grotesque", sans-serif;
+  --font-heading-style: normal;
+  --font-heading-weight: 400;
+  --font-heading-weight-bold: 700;
+  --font-heady-size-mobile: 30px;
+  --font-heady-size-desktop: 40px;
+
+  /* Text */
+  --font-body-family: "baskerville-display-pt", serif;
+  --font-body-style: normal;
+  --font-body-weight: 400;
+  --font-body-weight-bold: 700;
+  --font-body-size-mobile: 12px;
+  --font-body-size-desktop: 18px;
+
+  /* Paleta de colores */
+
+  /* Color Primario | Naranja */
+  --color-primary-orange-700: #873d12;
+  --color-primary-orange-600: #b45118;
+  --color-primary-orange-main: #e57b3d; /* <-- Main */
+  --color-primary-orange-400: #e7844b;
+  --color-primary-orange-300: #eda378;
+  --color-primary-orange-200: #f3c2a5;
+  --color-primary-orange-100: #f9e0d2;
+  --color-primary-orange-50: #fcf0e9;
+
+  /* Color Primario | Amarillo */
+  --color-primary-yellow-700: #7d591c;
+  --color-primary-yellow-600: #a67726;
+  --color-primary-yellow-500: #d0952f;
+  --color-primary-yellow-main: #d9aa59; /* <-- Main */
+  --color-primary-yellow-300: #e3bf82;
+  --color-primary-yellow-200: #ecd5ac;
+  --color-primary-yellow-100: #f6ead5;
+  --color-primary-yellow-50: #faf4ea;
+
+  /* Color Primario | Verde */
+  --color-primary-verde-700: #565742;
+  --color-primary-verde-main: #828363; /* <-- Main */
+  --color-primary-verde-500: #90916e;
+  --color-primary-verde-400: #a6a78b;
+  --color-primary-verde-300: #bcbda8;
+  --color-primary-verde-200: #d3d3c5;
+  --color-primary-verde-100: #e9e9e2;
+  --color-primary-verde-50: #f4f4f0;
+
+  /* Color Primario | Azul */
+  --color-primary-blue-700: #494c50;
+  --color-primary-blue-main: #696c71; /* <-- Main */
+  --color-primary-blue-500: #d0952f;
+  --color-primary-blue-400: #d9aa59;
+  --color-primary-blue-300: #e3bf82;
+  --color-primary-blue-200: #ecd5ac;
+  --color-primary-blue-100: #f6ead5;
+  --color-primary-blue-50: #faf4ea;
+
+  /* Line Height */
+
+  --line-height: 1.8;
+  --margin-bottom: 10px;
+}
+/* --- */
+
+/* Generales */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-style: var(--font-heading-style);
+}
+
+p,
+span,
+li,
+small,
+a {
+  font-size: var(--font-body-size-mobile);
+  font-family: var(--font-body-family);
+  line-height: var(--line-height);
+  margin-bottom: var(--margin-bottom);
+  font-weight: var(--font-body-weight);
+  font-style: var(--font-body-style);
+}
+
+a {
+  margin-bottom: 0;
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  cursor: pointer;
+}
+ul li {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+li a {
+  text-decoration: none;
+  font-size: 20px;
+}
+/* --- */
+
+/* Contenedor */
+.contenedor {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "hero"
+    "main"
+    "footer";
+}
+
+/* --- */
+
+/* Header  */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-area: header;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
+.button-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 3.75rem;
+  cursor: pointer;
+  color: black;
+  margin-bottom: 0;
+}
+
+.logo {
+  padding-top: 20px;
+  width: 230px;
+}
+
+.logo-blanco {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+
+.menu-nav-mobile {
+  display: none;
+}
+.menu-nav-mobile.open {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  top: 128px;
+  left: 0;
+  box-shadow: 0px -2px var(--color-primary-yellow-main);
+  z-index: 50;
+  width: 100%;
+  padding-left: 40px;
+  background-color: #fff;
+}
+
+.menu-nav-mobile li {
+  width: 85%;
+}
+.menu-nav-mobile li a {
+  padding: 12px 0;
+  display: block;
+}
+
+.menu-nav-mobile li:hover {
+  border-bottom: 2px solid var(--color-primary-yellow-main);
+}
+
+.menu-nav-mobile li:hover a {
+  color: var(--color-primary-yellow-main);
+}
+
+.menu-nav-mobile li:last-child {
+  border-bottom: none;
+}
+/* --- */
+
+/* Div */
+
+.hero {
+  width: 100%;
+  background-image: url("../img/platos-raiz/berenjenas-de-almagro_11_11zon.webp");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: hero;
+  min-height: 80svh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+.hero-contacto {
+  background-image: url("../img/platos-raiz/bebidas/licor-lavanda_3_11zon.webp");
+  background-position: center;
+  background-size: cover;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.button {
+  margin-bottom: 40px;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  z-index: 15;
+}
+
+.reserva a {
+  display: block;
+  padding: 8px 15px;
+  letter-spacing: 0.8px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: var(--color-primary-orange-700);
+  border-color: var(--color-primary-orange-700);
+}
+
+.button:hover a {
+  color: var(--color-primary-orange-100);
+}
+/* --- */
+
+/* Main */
+
+main,
+footer section {
+  padding: 20px 30px;
+}
+main section {
+  margin-bottom: 50px;
+}
+
+p {
+  padding: 20px 0;
+  font-size: var(--font-body-size-mobile);
+}
+/* Section Entrante */
+.entrante div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.entrante .plato2,
+.entrante .plato3 {
+  display: none;
+}
+.entrante img,
+.vino img {
+  clip-path: circle(47% at 50% 50%);
+  width: 65%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Section de Slider */
+
+.etiqueta,
+.patrocinadores {
+  font-size: 10px;
+  margin-bottom: 0;
+}
+.horizontal-line {
+  display: block;
+  color: var(--color-primary-orange-700);
+  border-top: 2px solid #873d12;
+  width: 50px;
+  margin: 1rem auto 2rem auto;
+}
+h3 {
+  font-size: 20px;
+}
+.contenedor-slider {
+  max-width: 850px;
+  overflow: hidden;
+  position: relative;
+}
+.etiqueta {
+  text-transform: uppercase;
+}
+.contenedor-imagenes {
+  display: flex;
+  aspect-ratio: 16/9;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.contenedor-slider img {
+  width: 100%;
+  flex: 0 0 100%;
+  object-fit: cover;
+  object-position: center top;
+  scroll-snap-align: center;
+}
+
+.contenedor-imagenes::-webkit-scrollbar {
+  display: none;
+}
+
+/* Btn navegacion Primario */
+.btn-navegacion-primario {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.flecha {
+  width: 40px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0;
+  border-color: transparent;
+  background-color: transparent;
+  color: #fff;
+  opacity: 0.5;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  pointer-events: auto;
+}
+
+.flecha:hover {
+  color: var(--color-primary-orange-700);
+  opacity: 1;
+}
+
+/* Btn Navegacion Secundario */
+.btn-navegacion-secundario {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translateX(-50%);
+}
+
+.btn-navegacion-secundario a {
+  width: 5rem;
+  height: 3px;
+  background-color: white;
+  border-radius: 2%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.btn-navegacion-secundario a:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn-navegacion-secundario a.activo {
+  opacity: 1;
+}
+
+/* --- Section de Slider */
+
+/* Section | Entrante */
+.entrante {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entrante p {
+  text-align: center;
+}
+/* -- */
+/* Section | Vinos */
+
+.vino {
+  display: flex;
+  flex-direction: row;
+}
+
+.vino p {
+  width: 50%;
+  padding: 20px 0;
+  margin-bottom: 0;
+}
+
+.semicirculo-left,
+.semicirculo-right {
+  overflow: hidden;
+}
+
+.semicirculo-left {
+  /* clip-path: ellipse(65% 48% at 0% 50%); */
+  clip-path: circle(42% at 17% 50%);
+}
+.semicirculo-right {
+  clip-path: circle(42% at 83% 50%);
+}
+.semicirculo-left img,
+.semicirculo-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transform: translateX(-60px);
+}
+.semicirculo-right img {
+  transform: translateX(60px);
+}
+
+/* --- */
+
+/* Section Patrocinadores */
+
+.patrocinadores img {
+  width: 180px;
+}
+
+.patrocinadores div {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.patrocinadores .mobile-logo-vertical {
+  width: 140px;
+}
+.patrocinadores .desktop-logo-horizontal {
+  display: none;
+}
+.patrocinadores img:nth-child(3) {
+  margin-bottom: 25px;
+}
+/* --- */
+
+/* Footer */
+
+footer section {
+  color: #fff;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer {
+  /* background-color: var(--color-primary-blue-700); */
+  background-image: url("../img/platos-raiz/berenjenas-de-almagro_11_11zon.webp");
+  background-attachment: fixed;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  padding: 20px 30px;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+footer > * {
+  z-index: 10;
+}
+footer p {
+  padding: 0;
+}
+
+footer h5 {
+  margin-bottom: 10px;
+}
+/* Section Primario */
+
+footer .logo-footer img {
+  padding: 0;
+  width: 230px;
+}
+.section-primario {
+  display: flex;
+  overflow: hidden;
+  flex-flow: column-reverse;
+  border-bottom: 1.5px solid #fff;
+}
+
+.logo-footer {
+  order: 2;
+}
+
+.logo-footer a {
+  display: block;
+  margin: auto;
+  width: fit-content;
+}
+.horarios {
+  order: 1;
+  margin-top: -10px;
+}
+
+.section-primario div {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-primario .redes-sociales img {
+  width: 30px;
+}
+
+.redes-sociales div {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 15px;
+  justify-content: center;
+}
+
+/* Section Secundario */
+
+.section-secundario ul {
+  display: none;
+}
+
+.section-secundario div {
+  display: flex;
+  justify-content: center;
+}
+
+.section-secundario small {
+  font-size: 12px;
+  margin: 0 auto;
+}
+
+/* Pagina de contacto */
+.contenedor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dato-contacto {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.dato-contacto img {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.info-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.icon-contacto img {
+  width: 40px;
+}
+.info-contacto p {
+  padding: 0;
+  margin: 0;
+  line-height: 0.9;
+}
+.cta {
+  display: flex;
+  flex-flow: row;
+  padding: 20px;
+  gap: 20px;
+}
+.cta img {
+  width: 150px;
+  object-fit: cover;
+}
+
+/* CONTENEDOR DE INFORMACIÓN Y FORMULARIO */
+
+.contenedor-formulario {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  width: 100%;
+}
+
+/* FORMULARIO */
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+.campo-formulario label, button {
+  font-family: var(--font-body-family);
+}
+
+.campo-formulario input,
+textarea {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid var(--color-primary-yellow-main);
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  outline: none;
+}
+
+/* Línea cuando el usuario selecciona el campo */
+.campo-formulario input:focus,
+textarea:focus {
+  border-bottom: 2px solid var(--color-primary-orange-main);
+}
+
+.boton-enviar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  align-self: flex-start;
+
+  padding: 2px 10px;
+  letter-spacing: 0.8px;
+  line-height: 10px;
+
+
+
+  cursor: pointer;
+  margin: 0;
+
+  background-color: var(--color-primary-orange-700);
+  border-color: var(--color-primary-orange-700);
+}
+
+.boton.enviar{
+   padding: 8px 15px;
+  letter-spacing: 0.8px;
+  line-height: 30px;
+
+  cursor: pointer;
+  margin: 0;
+
+  background-color: var(--color-primary-orange-700);
+  border-color: var(--color-primary-orange-700);
+}
+
+.boton-enviar, .btn {
+  color: var(--color-primary-orange-100);
+}
+.boton-enviar:hover, .btn {
+  color: #000;
+}
+.boton-enviar span, .btn span {
+  margin: 0;
+  font-size: 20px;
+  padding-bottom: 7px;
+}
+
+/* Pagina de CARTA */
+/* Div */
+
+.hero-carta p {
+  margin-top: 100px;
+  color: #fff;
+  z-index: 15;
+  width: 75%;
+  text-align: center;
+  bottom: 80px;
+  position: relative;
+}
+
+/* Main */
+/* .nav-secundario-carta ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.nav-secundario-carta a:hover {
+  border-bottom: 2px solid var(--color-primary-orange-main);
+} */
+
+/* Menú de categorías */
+.nav-secundario-carta ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+ 
+.nav-secundario-carta button {
+  padding-bottom: 6px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font-family: var(--font-heading-family);
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+}
+ 
+.nav-secundario-carta button:hover,
+.nav-secundario-carta button.activo {
+  border-bottom: 2px solid var(--color-primary-orange-main);
+}
+ 
+/* Carta */
+.carta {
+  margin-top: 50px;
+}
+ 
+.categoria {
+  margin-bottom: 60px;
+}
+ 
+.categoria-titulo {
+  margin-bottom: 25px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+ 
+/* Plato: foto a la izquierda, información a la derecha */
+.plato {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  column-gap: 20px;
+  align-items: start;
+  margin-bottom: 30px;
+}
+ 
+.plato img {
+  width: 100%;
+  aspect-ratio: 7/8;
+  object-fit: cover;
+}
+ 
+.plato-info h3 {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #000;
+  font-size: 18px;
+  line-height: 1.2;
+}
+ 
+.plato-info p {
+  padding: 0;
+}
+ 
+.plato-descripcion {
+  margin-top: 10px;
+}
+ 
+.plato-alergenos {
+  margin-top: 5px;
+  color: var(--color-primary-blue-main);
+}
+ 
+.plato-precio {
+  margin-top: 10px;
+  font-family: var(--font-heading-family);
+  font-size: 16px;
+}
+ 
+.carta-error {
+  padding: 40px 0;
+  text-align: center;
+}/* <<<<<-------- CSS MOBILE CARTA CLAUDE */
+
+/* Div */
+
+.bg-image-carta{
+
+  background-image: url("../img/platos-raiz/portada.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  aspect-ratio: 16/9;
+  
+}
+
+.carta-contenedor-vinos{
+  padding: 20px;
+}
+.btn-carta{
+  display: block;
+  width: fit-content;
+  background-color: var(--color-primary-orange-700);
+    border-color: var(--color-primary-orange-700);  
+    padding: 8px 15px;
+    letter-spacing: 0.8px;
+    line-height: 30px;
+    margin: 20px auto 40px;
+}
+
+.btn-carta:hover{
+color:#fff;
+}
+
+  
+@media (min-width: 600px) {
+  /* Generales */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: var(--font-heady-size-desktop);
+    line-height: 1;
+  }
+
+  p,
+  span,
+  li,
+  small,
+  a {
+    font-size: var(--font-body-size-desktop);
+  }
+
+  .horizontal-line {
+    width: 150px;
+    margin: 2rem auto 3rem auto;
+    border-width: 3.5px;
+  }
+
+  .entrante img {
+    width: 40%;
+    max-width: 400px;
+  }
+
+  .vino {
+    justify-content: center;
+  }
+
+  .vino p {
+    width: 40%;
+  }
+
+  .semicirculo-left img,
+  .semicirculo-right img {
+    height: 300px;
+    max-height: 500px;
+    object-fit: contain;
+    max-width: 500px;
+  }
+
+
+
+  .formulario-contacto{
+    max-width: 800px;
+  }
+  footer h5 {
+    font-size: 13px;
+  }
+
+
+  /* =========================================================
+   PARTE B · TABLET
+   Pegar DENTRO de tu @media (min-width: 600px) { ... }
+   ========================================================= */
+ 
+  .nav-secundario-carta ul {
+    gap: 40px;
+  }
+ 
+  .nav-secundario-carta button {
+    font-size: 18px;
+  }
+ 
+  .categoria-titulo {
+    font-size: 30px;
+  }
+ 
+  .plato {
+    grid-template-columns: 220px 1fr;
+    column-gap: 40px;
+  }
+ 
+  .plato-info h3 {
+    font-size: 24px;
+  }
+ 
+  .plato-precio {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  /* Contenedor */
+  .contenedor {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "hero hero hero"
+      "main main main"
+      "footer footer footer";
+  }
+
+  .logo-negro {
+    display: none;
+  }
+
+  .logo-blanco {
+    display: block;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 40px;
+  }
+
+  header .logo {
+    width: 260px;
+    padding-top: 0;
+  }
+
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+
+  .menu-nav-desktop {
+    display: flex;
+    gap: 50px;
+    margin-top: 25px;
+  }
+
+  .desktop a {
+    display: block;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    font-family: var(--font-heading-family);
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .desktop a:hover {
+    border-bottom: 2px solid var(--color-primary-orange-main);
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    height: 100svh;
+    grid-area: hero;
+    background-position: right bottom;
+  }
+
+  .reserva a {
+    font-size: 15px;
+  }
+
+  /* Presentación: texto a la izquierda, foto a la derecha */
+  .section-slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas:
+      "etiqueta  carrusel"
+      " titulo carrusel"
+      "linea  carrusel"
+      "texto carrusel";
+    column-gap: 80px;
+  }
+
+  .section-slider .etiqueta {
+    grid-area: etiqueta;
+  }
+
+  .section-slider h3 {
+    grid-area: titulo;
+    font-size: 48px;
+    line-height: 1.3;
+  }
+
+  .section-slider .horizontal-line {
+    grid-area: linea;
+    margin: 2rem 0;
+  }
+
+  .section-slider p {
+    grid-area: texto;
+    max-width: 480px;
+  }
+
+  .section-slider .contenedor-slider {
+    grid-area: carrusel;
+    width: 100%;
+  }
+
+  .contenedor-imagenes {
+    aspect-ratio: 4/3;
+  }
+
+  .entrante {
+    margin: 120px 0;
+  }
+
+  .entrante p {
+    max-width: 500px;
+  }
+  .entrante .plato1,
+  .entrante .plato2,
+  .entrante .plato3 {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    gap: 50px;
+    width: 100%;
+  }
+
+  .entrante .plato1 {
+    justify-content: start;
+  }
+
+  .entrante .plato2 {
+    justify-content: end;
+    flex-flow: row;
+  }
+
+  .entrante .plato3 {
+    justify-content: start;
+  }
+
+  .vino {
+    display: none;
+  }
+
+  .patrocinadores div {
+    margin-top: 50px;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6.25rem;
+  }
+
+  .patrocinadores .desktop-logo-horizontal {
+    width: 400px;
+  }
+
+  .patrocinadores div .mobile-logo-vertical {
+    display: none;
+  }
+  .patrocinadores div .desktop-logo-horizontal {
+    display: block;
+  }
+
+  .patrocinadores img {
+    width: 300px;
+  }
+  main {
+    grid-area: main;
+    padding: 100px 50px;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  footer .section-primario {
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  /* =========================================================
+   PARTE C · ESCRITORIO
+   Pegar DENTRO de tu @media (min-width: 1024px) and (max-width: 1920px) { ... }
+   ========================================================= */
+ 
+  /* Todos: Entrantes y Principales lado a lado */
+  .carta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
+ 
+  /* Si solo hay una categoría, sus 2 platos van en dos columnas */
+  .categoria:only-child {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
+ 
+  .categoria:only-child .categoria-titulo {
+    grid-column: 1 / 3;
+  }
+ 
+  .carta-error {
+    grid-column: 1 / 3;
+  }
+
+/* Carta */
+  .contenedor-formulario {
+  
+  grid-template-columns: auto 1fr;
+  column-gap: 150px;
+}
+
+}
