@@ -1,3 +1,9 @@
+/* =====================================================
+   style.css — estilos COMUNES a todas las páginas
+   Reset, variables, tipografía, cabecera, hero, botones, bloque de texto,
+   formulario genérico y pie. Lo específico de cada página está en css/<pagina>.css
+   ===================================================== */
+
 /* Selecciona todos los elementos, antes y después */
 *,
 *::before,
@@ -10,8 +16,7 @@
   /* Elimina rellenos heredados */
 }
 
-/* --- */
-
+/* ---- Variables ---- */
 /* Variables */
 :root {
   /* Heading */
@@ -77,8 +82,8 @@
   --line-height: 1.8;
   --margin-bottom: 10px;
 }
-/* --- */
 
+/* ---- Generales ---- */
 /* Generales */
 h1,
 h2,
@@ -123,7 +128,12 @@ li a {
 }
 /* --- */
 
-/* Contenedor */
+/* Todos los botones usan la fuente del cuerpo */
+button {
+  font-family: var(--font-body-family);
+}
+
+/* ---- Contenedor ---- */
 .contenedor {
   width: 100%;
   display: grid;
@@ -135,9 +145,7 @@ li a {
     "footer";
 }
 
-/* --- */
-
-/* Header  */
+/* ---- Cabecera y navegación ---- */
 header {
   display: flex;
   align-items: center;
@@ -148,7 +156,7 @@ header {
   padding: 20px;
 }
 
-.button-toggle {
+.nav__toggle {
   display: block;
   background: none;
   border: none;
@@ -163,18 +171,18 @@ header {
   width: 230px;
 }
 
-.logo-blanco {
+.logo--blanco {
   display: none;
 }
 
-.desktop {
+.nav--escritorio {
   display: none;
 }
 
-.menu-nav-mobile {
+.nav__lista--movil {
   display: none;
 }
-.menu-nav-mobile.open {
+.nav__lista--movil.abierto {
   display: flex;
   flex-flow: column wrap;
   position: absolute;
@@ -187,29 +195,27 @@ header {
   background-color: #fff;
 }
 
-.menu-nav-mobile li {
+.nav__lista--movil li {
   width: 85%;
 }
-.menu-nav-mobile li a {
+.nav__lista--movil li a {
   padding: 12px 0;
   display: block;
 }
 
-.menu-nav-mobile li:hover {
+.nav__lista--movil li:hover {
   border-bottom: 2px solid var(--color-primary-yellow-main);
 }
 
-.menu-nav-mobile li:hover a {
+.nav__lista--movil li:hover a {
   color: var(--color-primary-yellow-main);
 }
 
-.menu-nav-mobile li:last-child {
+.nav__lista--movil li:last-child {
   border-bottom: none;
 }
-/* --- */
 
-/* Div */
-
+/* ---- Hero (variantes: --inicio, --carta, --contacto) ---- */
 .hero {
   width: 100%;
   background-image: url("../img/platos-raiz/berenjenas-de-almagro_11_11zon.webp");
@@ -223,7 +229,7 @@ header {
   align-items: flex-end;
   position: relative;
 }
-.hero-contacto {
+.hero--contacto {
   background-image: url("../img/platos-raiz/bebidas/licor-lavanda_3_11zon.webp");
   background-position: center;
   background-size: cover;
@@ -237,8 +243,11 @@ header {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
 }
+/* La variante --contacto vive aquí (y no en contacto.css) a propósito:
+   el @media de escritorio de más abajo redefine .hero y debe ir DESPUÉS. */
 
-.button {
+/* ---- Botón (.boton) y variantes ---- */
+.boton {
   margin-bottom: 40px;
   border-radius: 30px;
   border: 1px solid #fff;
@@ -246,26 +255,43 @@ header {
   z-index: 15;
 }
 
-.reserva a {
-  display: block;
-  padding: 8px 15px;
-  letter-spacing: 0.8px;
-  line-height: 30px;
-  text-transform: uppercase;
-}
-
-.button:hover {
+.boton:hover {
   background-color: var(--color-primary-orange-700);
   border-color: var(--color-primary-orange-700);
 }
 
-.button:hover a {
+/* Variante: enviar formulario */
+.boton--enviar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  align-self: flex-start;
+
+  padding: 2px 10px;
+  letter-spacing: 0.8px;
+  line-height: 10px;
+
+  cursor: pointer;
+  margin: 0;
+
+  background-color: var(--color-primary-orange-700);
+  border-color: var(--color-primary-orange-700);
+}
+
+.boton--enviar {
   color: var(--color-primary-orange-100);
 }
-/* --- */
+.boton--enviar:hover {
+  color: #000;
+}
+.boton--enviar span {
+  margin: 0;
+  font-size: 20px;
+  padding-bottom: 7px;
+}
 
-/* Main */
-
+/* ---- Main ---- */
 main,
 footer section {
   padding: 20px 30px;
@@ -278,33 +304,13 @@ p {
   padding: 20px 0;
   font-size: var(--font-body-size-mobile);
 }
-/* Section Entrante */
-.entrante div {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-.entrante .plato2,
-.entrante .plato3 {
-  display: none;
-}
-.entrante img,
-.vino img {
-  clip-path: circle(47% at 50% 50%);
-  width: 65%;
-  border-radius: 50%;
-  object-fit: cover;
-}
 
-/* Section de Slider */
-
-.etiqueta,
-.patrocinadores {
+/* ---- Etiqueta, línea decorativa y títulos ---- */
+.etiqueta {
   font-size: 10px;
   margin-bottom: 0;
 }
-.horizontal-line {
+.linea-decorativa {
   display: block;
   color: var(--color-primary-orange-700);
   border-top: 2px solid #873d12;
@@ -314,181 +320,11 @@ p {
 h3 {
   font-size: 20px;
 }
-.contenedor-slider {
-  max-width: 850px;
-  overflow: hidden;
-  position: relative;
-}
 .etiqueta {
   text-transform: uppercase;
 }
-.contenedor-imagenes {
-  display: flex;
-  aspect-ratio: 16/9;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-}
 
-.contenedor-slider img {
-  width: 100%;
-  flex: 0 0 100%;
-  object-fit: cover;
-  object-position: center top;
-  scroll-snap-align: center;
-}
-
-.contenedor-imagenes::-webkit-scrollbar {
-  display: none;
-}
-
-/* Btn navegacion Primario */
-.btn-navegacion-primario {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.flecha {
-  width: 40px;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 0;
-  border-color: transparent;
-  background-color: transparent;
-  color: #fff;
-  opacity: 0.5;
-  font-size: 18px;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-  pointer-events: auto;
-}
-
-.flecha:hover {
-  color: var(--color-primary-orange-700);
-  opacity: 1;
-}
-
-/* Btn Navegacion Secundario */
-.btn-navegacion-secundario {
-  display: flex;
-  gap: 10px;
-  position: absolute;
-  left: 50%;
-  bottom: 2%;
-  transform: translateX(-50%);
-}
-
-.btn-navegacion-secundario a {
-  width: 5rem;
-  height: 3px;
-  background-color: white;
-  border-radius: 2%;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-}
-
-.btn-navegacion-secundario a:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.btn-navegacion-secundario a.activo {
-  opacity: 1;
-}
-
-/* --- Section de Slider */
-
-/* Section | Entrante */
-.entrante {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.entrante p {
-  text-align: center;
-}
-/* -- */
-/* Section | Vinos */
-
-.vino {
-  display: flex;
-  flex-direction: row;
-}
-
-.vino p {
-  width: 50%;
-  padding: 20px 0;
-  margin-bottom: 0;
-}
-
-.semicirculo-left,
-.semicirculo-right {
-  overflow: hidden;
-}
-
-.semicirculo-left {
-  /* clip-path: ellipse(65% 48% at 0% 50%); */
-  clip-path: circle(42% at 17% 50%);
-}
-.semicirculo-right {
-  clip-path: circle(42% at 83% 50%);
-}
-.semicirculo-left img,
-.semicirculo-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0;
-  transform: translateX(-60px);
-}
-.semicirculo-right img {
-  transform: translateX(60px);
-}
-
-/* --- */
-
-/* Section Patrocinadores */
-
-.patrocinadores img {
-  width: 180px;
-}
-
-.patrocinadores div {
-  text-align: center;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-.patrocinadores .mobile-logo-vertical {
-  width: 140px;
-}
-.patrocinadores .desktop-logo-horizontal {
-  display: none;
-}
-.patrocinadores img:nth-child(3) {
-  margin-bottom: 25px;
-}
-/* --- */
-
-/* Footer */
-
+/* ---- Pie de página ---- */
 footer section {
   color: #fff;
   padding: 0;
@@ -535,41 +371,41 @@ footer h5 {
 }
 /* Section Primario */
 
-footer .logo-footer img {
+footer .pie__logo img {
   padding: 0;
   width: 230px;
 }
-.section-primario {
+.pie__principal {
   display: flex;
   overflow: hidden;
   flex-flow: column-reverse;
   border-bottom: 1.5px solid #fff;
 }
 
-.logo-footer {
+.pie__logo {
   order: 2;
 }
 
-.logo-footer a {
+.pie__logo a {
   display: block;
   margin: auto;
   width: fit-content;
 }
-.horarios {
+.pie__horarios {
   order: 1;
   margin-top: -10px;
 }
 
-.section-primario div {
+.pie__principal div {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.section-primario .redes-sociales img {
+.pie__principal .pie__redes img {
   width: 30px;
 }
 
-.redes-sociales div {
+.pie__redes div {
   display: flex;
   flex-flow: row wrap;
   column-gap: 15px;
@@ -578,97 +414,43 @@ footer .logo-footer img {
 
 /* Section Secundario */
 
-.section-secundario ul {
+.pie__legal ul {
   display: none;
 }
 
-.section-secundario div {
+.pie__legal div {
   display: flex;
   justify-content: center;
 }
 
-.section-secundario small {
+.pie__legal small {
   font-size: 12px;
   margin: 0 auto;
 }
 
-/* Pagina de contacto */
-.contenedor-info {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.dato-contacto {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.dato-contacto img {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
-}
-
-.info-contacto {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.icon-contacto img {
-  width: 40px;
-}
-.info-contacto p {
-  padding: 0;
-  margin: 0;
-  line-height: 0.9;
-}
-.cta {
-  display: flex;
-  flex-flow: row;
-  padding: 20px;
-  gap: 20px;
-}
-.cta img {
-  width: 150px;
-  object-fit: cover;
-}
-
-/* CONTENEDOR DE INFORMACIÓN Y FORMULARIO */
-
-.contenedor-formulario {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-  width: 100%;
-}
-
-/* FORMULARIO */
-
-.formulario-contacto {
+/* ---- Formulario genérico (reutilizable) ---- */
+.formulario {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.campo-formulario {
+.formulario__campo {
   display: flex;
   flex-direction: column;
   gap: 8px;
-
 }
 
-.campo-formulario label, button {
+.formulario__campo label {
   font-family: var(--font-body-family);
 }
 
-.campo-formulario input,
+.formulario__campo input,
 textarea {
   width: 100%;
   padding: 12px 0;
   border: none;
-  border-bottom: 1px solid var(--color-primary-yellow-main);
+  border-bottom: .5px solid #000;
   border-radius: 0;
   background: transparent;
   font-family: var(--font-body-family);
@@ -677,199 +459,11 @@ textarea {
 }
 
 /* Línea cuando el usuario selecciona el campo */
-.campo-formulario input:focus,
+.formulario__campo input:focus,
 textarea:focus {
   border-bottom: 2px solid var(--color-primary-orange-main);
 }
 
-.boton-enviar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  align-self: flex-start;
-
-  padding: 2px 10px;
-  letter-spacing: 0.8px;
-  line-height: 10px;
-
-
-
-  cursor: pointer;
-  margin: 0;
-
-  background-color: var(--color-primary-orange-700);
-  border-color: var(--color-primary-orange-700);
-}
-
-.boton.enviar{
-   padding: 8px 15px;
-  letter-spacing: 0.8px;
-  line-height: 30px;
-
-  cursor: pointer;
-  margin: 0;
-
-  background-color: var(--color-primary-orange-700);
-  border-color: var(--color-primary-orange-700);
-}
-
-.boton-enviar, .btn {
-  color: var(--color-primary-orange-100);
-}
-.boton-enviar:hover, .btn {
-  color: #000;
-}
-.boton-enviar span, .btn span {
-  margin: 0;
-  font-size: 20px;
-  padding-bottom: 7px;
-}
-
-/* Pagina de CARTA */
-/* Div */
-
-.hero-carta p {
-  margin-top: 100px;
-  color: #fff;
-  z-index: 15;
-  width: 75%;
-  text-align: center;
-  bottom: 80px;
-  position: relative;
-}
-
-/* Main */
-/* .nav-secundario-carta ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 25px;
-}
-
-.nav-secundario-carta a:hover {
-  border-bottom: 2px solid var(--color-primary-orange-main);
-} */
-
-/* Menú de categorías */
-.nav-secundario-carta ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 25px;
-}
- 
-.nav-secundario-carta button {
-  padding-bottom: 6px;
-  border: none;
-  border-bottom: 2px solid transparent;
-  background: none;
-  font-family: var(--font-heading-family);
-  font-size: 14px;
-  color: #000;
-  cursor: pointer;
-}
- 
-.nav-secundario-carta button:hover,
-.nav-secundario-carta button.activo {
-  border-bottom: 2px solid var(--color-primary-orange-main);
-}
- 
-/* Carta */
-.carta {
-  margin-top: 50px;
-}
- 
-.categoria {
-  margin-bottom: 60px;
-}
- 
-.categoria-titulo {
-  margin-bottom: 25px;
-  font-size: 24px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
- 
-/* Plato: foto a la izquierda, información a la derecha */
-.plato {
-  display: grid;
-  grid-template-columns: 38% 1fr;
-  column-gap: 20px;
-  align-items: start;
-  margin-bottom: 30px;
-}
- 
-.plato img {
-  width: 100%;
-  aspect-ratio: 7/8;
-  object-fit: cover;
-}
- 
-.plato-info h3 {
-  padding-bottom: 8px;
-  border-bottom: 1px solid #000;
-  font-size: 18px;
-  line-height: 1.2;
-}
- 
-.plato-info p {
-  padding: 0;
-}
- 
-.plato-descripcion {
-  margin-top: 10px;
-}
- 
-.plato-alergenos {
-  margin-top: 5px;
-  color: var(--color-primary-blue-main);
-}
- 
-.plato-precio {
-  margin-top: 10px;
-  font-family: var(--font-heading-family);
-  font-size: 16px;
-}
- 
-.carta-error {
-  padding: 40px 0;
-  text-align: center;
-}/* <<<<<-------- CSS MOBILE CARTA CLAUDE */
-
-/* Div */
-
-.bg-image-carta{
-
-  background-image: url("../img/platos-raiz/portada.jpg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  aspect-ratio: 16/9;
-  
-}
-
-.carta-contenedor-vinos{
-  padding: 20px;
-}
-.btn-carta{
-  display: block;
-  width: fit-content;
-  background-color: var(--color-primary-orange-700);
-    border-color: var(--color-primary-orange-700);  
-    padding: 8px 15px;
-    letter-spacing: 0.8px;
-    line-height: 30px;
-    margin: 20px auto 40px;
-}
-
-.btn-carta:hover{
-color:#fff;
-}
-
-  
 @media (min-width: 600px) {
   /* Generales */
   h1,
@@ -890,92 +484,40 @@ color:#fff;
     font-size: var(--font-body-size-desktop);
   }
 
-  .horizontal-line {
+  .linea-decorativa {
     width: 150px;
     margin: 2rem auto 3rem auto;
     border-width: 3.5px;
   }
 
-  .entrante img {
-    width: 40%;
-    max-width: 400px;
-  }
-
-  .vino {
-    justify-content: center;
-  }
-
-  .vino p {
-    width: 40%;
-  }
-
-  .semicirculo-left img,
-  .semicirculo-right img {
-    height: 300px;
-    max-height: 500px;
-    object-fit: contain;
-    max-width: 500px;
-  }
-
-
-
-  .formulario-contacto{
+  /* Formulario */
+  .formulario {
     max-width: 800px;
   }
+
   footer h5 {
     font-size: 13px;
-  }
-
-
-  /* =========================================================
-   PARTE B · TABLET
-   Pegar DENTRO de tu @media (min-width: 600px) { ... }
-   ========================================================= */
- 
-  .nav-secundario-carta ul {
-    gap: 40px;
-  }
- 
-  .nav-secundario-carta button {
-    font-size: 18px;
-  }
- 
-  .categoria-titulo {
-    font-size: 30px;
-  }
- 
-  .plato {
-    grid-template-columns: 220px 1fr;
-    column-gap: 40px;
-  }
- 
-  .plato-info h3 {
-    font-size: 24px;
-  }
- 
-  .plato-precio {
-    font-size: 20px;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1920px) {
   /* Contenedor */
+  /* Contenedor */
   .contenedor {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
     grid-template-areas:
       "hero hero hero"
       "main main main"
       "footer footer footer";
   }
 
-  .logo-negro {
+  .logo--negro {
     display: none;
   }
 
-  .logo-blanco {
+  .logo--blanco {
     display: block;
   }
 
@@ -994,20 +536,20 @@ color:#fff;
     padding-top: 0;
   }
 
-  .mobile {
+  .nav--movil {
     display: none;
   }
-  .desktop {
+  .nav--escritorio {
     display: block;
   }
 
-  .menu-nav-desktop {
+  .nav__lista--escritorio {
     display: flex;
     gap: 50px;
     margin-top: 25px;
   }
 
-  .desktop a {
+  .nav--escritorio a {
     display: block;
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
@@ -1018,7 +560,7 @@ color:#fff;
     color: #fff;
   }
 
-  .desktop a:hover {
+  .nav--escritorio a:hover {
     border-bottom: 2px solid var(--color-primary-orange-main);
   }
 
@@ -1030,154 +572,35 @@ color:#fff;
     background-position: right bottom;
   }
 
-  .reserva a {
-    font-size: 15px;
-  }
-
-  /* Presentación: texto a la izquierda, foto a la derecha */
-  .section-slider {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto 1fr;
-    grid-template-areas:
-      "etiqueta  carrusel"
-      " titulo carrusel"
-      "linea  carrusel"
-      "texto carrusel";
-    column-gap: 80px;
-  }
-
-  .section-slider .etiqueta {
-    grid-area: etiqueta;
-  }
-
-  .section-slider h3 {
-    grid-area: titulo;
-    font-size: 48px;
-    line-height: 1.3;
-  }
-
-  .section-slider .horizontal-line {
-    grid-area: linea;
-    margin: 2rem 0;
-  }
-
-  .section-slider p {
-    grid-area: texto;
-    max-width: 480px;
-  }
-
-  .section-slider .contenedor-slider {
-    grid-area: carrusel;
-    width: 100%;
-  }
-
-  .contenedor-imagenes {
-    aspect-ratio: 4/3;
-  }
-
-  .entrante {
-    margin: 120px 0;
-  }
-
-  .entrante p {
-    max-width: 500px;
-  }
-  .entrante .plato1,
-  .entrante .plato2,
-  .entrante .plato3 {
-    display: flex;
-    flex-flow: row-reverse wrap;
-    gap: 50px;
-    width: 100%;
-  }
-
-  .entrante .plato1 {
-    justify-content: start;
-  }
-
-  .entrante .plato2 {
-    justify-content: end;
-    flex-flow: row;
-  }
-
-  .entrante .plato3 {
-    justify-content: start;
-  }
-
-  .vino {
-    display: none;
-  }
-
-  .patrocinadores div {
-    margin-top: 50px;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    gap: 6.25rem;
-  }
-
-  .patrocinadores .desktop-logo-horizontal {
-    width: 400px;
-  }
-
-  .patrocinadores div .mobile-logo-vertical {
-    display: none;
-  }
-  .patrocinadores div .desktop-logo-horizontal {
-    display: block;
-  }
-
-  .patrocinadores img {
-    width: 300px;
-  }
   main {
     grid-area: main;
-    padding: 100px 50px;
+    padding: 30px 50px;
   }
 
   footer {
     grid-area: footer;
   }
 
-  footer .section-primario {
+  footer .pie__principal {
     width: 1024px;
     margin: 0 auto;
   }
 
-  /* =========================================================
-   PARTE C · ESCRITORIO
-   Pegar DENTRO de tu @media (min-width: 1024px) and (max-width: 1920px) { ... }
-   ========================================================= */
- 
-  /* Todos: Entrantes y Principales lado a lado */
-  .carta {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
-  }
- 
-  /* Si solo hay una categoría, sus 2 platos van en dos columnas */
-  .categoria:only-child {
-    grid-column: 1 / 3;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
-  }
- 
-  .categoria:only-child .categoria-titulo {
-    grid-column: 1 / 3;
-  }
- 
-  .carta-error {
-    grid-column: 1 / 3;
+  /* Bloque de texto */
+  .bloque-texto {
+    text-align: center;
+    margin-bottom: 120px;
   }
 
-/* Carta */
-  .contenedor-formulario {
-  
-  grid-template-columns: auto 1fr;
-  column-gap: 150px;
-}
+  .bloque-texto--secundario {
+    text-align: revert;
+    margin-bottom: initial;
+  }
 
+  /* Botón enviar */
+  .boton--enviar {
+    padding: 2px 20px;
+    background-color: #000;
+    color: #fff;
+  }
 }

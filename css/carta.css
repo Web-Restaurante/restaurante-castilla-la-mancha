@@ -1,0 +1,181 @@
+/* =====================================================
+   carta.css — solo carta.html
+   Filtros de categoría, platos (los pinta carta.js) y bloque de vinos
+   ===================================================== */
+
+.hero--carta .hero__texto {
+  margin-top: 100px;
+  color: #fff;
+  z-index: 15;
+  width: 75%;
+  text-align: center;
+  bottom: 80px;
+  position: relative;
+}
+
+/* ---- Filtros de categoría ---- */
+/* Menú de categorías */
+.carta-filtros__lista {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.carta-filtros__boton {
+  padding-bottom: 6px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font-family: var(--font-heading-family);
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+}
+
+.carta-filtros__boton:hover,
+.carta-filtros__boton.activo {
+  border-bottom: 2px solid var(--color-primary-orange-main);
+}
+
+/* ---- Carta (la genera carta.js) ---- */
+.carta {
+  margin-top: 50px;
+}
+
+.categoria {
+  margin-bottom: 60px;
+}
+
+.categoria__titulo {
+  margin-bottom: 25px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Plato: foto a la izquierda, información a la derecha */
+.plato {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  column-gap: 20px;
+  align-items: start;
+  margin-bottom: 30px;
+}
+
+.plato img {
+  width: 100%;
+  aspect-ratio: 7/8;
+  object-fit: cover;
+}
+
+.plato__info h3 {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #000;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.plato__info p {
+  padding: 0;
+}
+
+.plato__descripcion {
+  margin-top: 10px;
+}
+
+.plato__alergenos {
+  margin-top: 5px;
+  color: var(--color-primary-blue-main);
+}
+
+.plato__precio {
+  margin-top: 10px;
+  font-family: var(--font-heading-family);
+  font-size: 16px;
+}
+
+.carta__error {
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* ---- Bloque de vinos ---- */
+.carta-fondo {
+  background-image: url("../img/platos-raiz/portada.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  aspect-ratio: 16/9;
+}
+
+.carta-vinos {
+  padding: 20px;
+}
+.boton--carta {
+  display: block;
+  width: fit-content;
+  background-color: var(--color-primary-orange-700);
+  border-color: var(--color-primary-orange-700);
+  padding: 8px 15px;
+  letter-spacing: 0.8px;
+  line-height: 30px;
+  margin: 20px auto 40px;
+}
+
+.boton--carta:hover {
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  .carta-filtros__lista {
+    gap: 40px;
+  }
+
+  .carta-filtros__boton {
+    font-size: 18px;
+  }
+
+  .categoria__titulo {
+    font-size: 30px;
+  }
+
+  .plato {
+    grid-template-columns: 220px 1fr;
+    column-gap: 40px;
+  }
+
+  .plato__info h3 {
+    font-size: 24px;
+  }
+
+  .plato__precio {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  /* Todos: Entrantes y Principales lado a lado */
+  .carta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
+
+  /* Si solo hay una categoría, sus 2 platos van en dos columnas */
+  .categoria:only-child {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
+
+  .categoria:only-child .categoria__titulo {
+    grid-column: 1 / 3;
+  }
+
+  .carta__error {
+    grid-column: 1 / 3;
+  }
+}

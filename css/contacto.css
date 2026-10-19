@@ -1,0 +1,119 @@
+/* =====================================================
+   contacto.css — solo contacto.html
+   Datos de contacto, llamada a la acción (.cta) y maquetación del formulario
+   ===================================================== */
+
+.contacto__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contacto__dato {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contacto__dato img {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.contacto__dato-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.contacto__dato-texto p {
+  padding: 0;
+  margin: 0;
+  line-height: 0.9;
+}
+
+/* ---- Llamada a la acción ---- */
+.cta {
+  display: flex;
+  flex-flow: row;
+  padding: 20px;
+  gap: 20px;
+}
+.cta img {
+  width: 50%;
+  object-fit: cover;
+}
+
+/* ---- Cuerpo: datos + formulario ---- */
+.contacto__cuerpo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .contacto__dato {
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  .contenedor--contacto {
+    grid-template-areas:
+      "hero hero hero"
+      "main main main"
+      "cta cta cta"
+      "footer footer footer";
+  }
+
+  .cta {
+    grid-area: cta;
+    gap: 3%;
+  }
+
+  /* ⚠ SIN EFECTO (typo): .contenedor-text no existe. Si quieres el párrafo centrado
+  al 50%, cambia el selector por `.bloque-texto p`.
+    .contenedor-text p {
+    margin: 0 auto;
+    width: 50%;
+  }
+  */
+
+  .contacto__cuerpo {
+    grid-template-columns: auto 1fr;
+    gap: 100px;
+  }
+  .formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "nombre email"
+      "asunto asunto"
+      "mensaje mensaje"
+      "boton boton";
+
+    gap: 30px;
+    column-gap: 70px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .formulario__campo--nombre {
+    grid-area: nombre;
+  }
+  .formulario__campo--email {
+    grid-area: email;
+  }
+  .formulario__campo--asunto {
+    grid-area: asunto;
+  }
+  .formulario__campo--mensaje {
+    grid-area: mensaje;
+  }
+
+  .formulario .boton--enviar {
+    grid-area: boton;
+    justify-self: end;
+  }
+}
