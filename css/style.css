@@ -631,7 +631,7 @@ footer .logo-footer img {
   gap: 20px;
 }
 .cta img {
-  width: 150px;
+  width: 50%;
   object-fit: cover;
 }
 
@@ -656,10 +656,10 @@ footer .logo-footer img {
   display: flex;
   flex-direction: column;
   gap: 8px;
-
 }
 
-.campo-formulario label, button {
+.campo-formulario label,
+button {
   font-family: var(--font-body-family);
 }
 
@@ -668,7 +668,7 @@ textarea {
   width: 100%;
   padding: 12px 0;
   border: none;
-  border-bottom: 1px solid var(--color-primary-yellow-main);
+  border-bottom: .5px solid #000;
   border-radius: 0;
   background: transparent;
   font-family: var(--font-body-family);
@@ -693,8 +693,6 @@ textarea:focus {
   letter-spacing: 0.8px;
   line-height: 10px;
 
-
-
   cursor: pointer;
   margin: 0;
 
@@ -702,8 +700,8 @@ textarea:focus {
   border-color: var(--color-primary-orange-700);
 }
 
-.boton.enviar{
-   padding: 8px 15px;
+.boton.enviar {
+  padding: 8px 15px;
   letter-spacing: 0.8px;
   line-height: 30px;
 
@@ -714,13 +712,16 @@ textarea:focus {
   border-color: var(--color-primary-orange-700);
 }
 
-.boton-enviar, .btn {
+.boton-enviar,
+.btn {
   color: var(--color-primary-orange-100);
 }
-.boton-enviar:hover, .btn {
+.boton-enviar:hover,
+.btn {
   color: #000;
 }
-.boton-enviar span, .btn span {
+.boton-enviar span,
+.btn span {
   margin: 0;
   font-size: 20px;
   padding-bottom: 7px;
@@ -760,7 +761,7 @@ textarea:focus {
   gap: 18px;
   margin-top: 25px;
 }
- 
+
 .nav-secundario-carta button {
   padding-bottom: 6px;
   border: none;
@@ -771,28 +772,28 @@ textarea:focus {
   color: #000;
   cursor: pointer;
 }
- 
+
 .nav-secundario-carta button:hover,
 .nav-secundario-carta button.activo {
   border-bottom: 2px solid var(--color-primary-orange-main);
 }
- 
+
 /* Carta */
 .carta {
   margin-top: 50px;
 }
- 
+
 .categoria {
   margin-bottom: 60px;
 }
- 
+
 .categoria-titulo {
   margin-bottom: 25px;
   font-size: 24px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
- 
+
 /* Plato: foto a la izquierda, información a la derecha */
 .plato {
   display: grid;
@@ -801,75 +802,72 @@ textarea:focus {
   align-items: start;
   margin-bottom: 30px;
 }
- 
+
 .plato img {
   width: 100%;
   aspect-ratio: 7/8;
   object-fit: cover;
 }
- 
+
 .plato-info h3 {
   padding-bottom: 8px;
   border-bottom: 1px solid #000;
   font-size: 18px;
   line-height: 1.2;
 }
- 
+
 .plato-info p {
   padding: 0;
 }
- 
+
 .plato-descripcion {
   margin-top: 10px;
 }
- 
+
 .plato-alergenos {
   margin-top: 5px;
   color: var(--color-primary-blue-main);
 }
- 
+
 .plato-precio {
   margin-top: 10px;
   font-family: var(--font-heading-family);
   font-size: 16px;
 }
- 
+
 .carta-error {
   padding: 40px 0;
   text-align: center;
-}/* <<<<<-------- CSS MOBILE CARTA CLAUDE */
+} /* <<<<<-------- CSS MOBILE CARTA CLAUDE */
 
 /* Div */
 
-.bg-image-carta{
-
+.bg-image-carta {
   background-image: url("../img/platos-raiz/portada.jpg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   aspect-ratio: 16/9;
-  
 }
 
-.carta-contenedor-vinos{
+.carta-contenedor-vinos {
   padding: 20px;
 }
-.btn-carta{
+.btn-carta {
   display: block;
   width: fit-content;
   background-color: var(--color-primary-orange-700);
-    border-color: var(--color-primary-orange-700);  
-    padding: 8px 15px;
-    letter-spacing: 0.8px;
-    line-height: 30px;
-    margin: 20px auto 40px;
+  border-color: var(--color-primary-orange-700);
+  padding: 8px 15px;
+  letter-spacing: 0.8px;
+  line-height: 30px;
+  margin: 20px auto 40px;
 }
 
-.btn-carta:hover{
-color:#fff;
+.btn-carta:hover {
+  color: #fff;
 }
 
-  
 @media (min-width: 600px) {
   /* Generales */
   h1,
@@ -917,44 +915,44 @@ color:#fff;
     max-width: 500px;
   }
 
-
-
-  .formulario-contacto{
+  .formulario-contacto {
     max-width: 800px;
   }
   footer h5 {
     font-size: 13px;
   }
 
-
   /* =========================================================
    PARTE B · TABLET
    Pegar DENTRO de tu @media (min-width: 600px) { ... }
    ========================================================= */
- 
+
   .nav-secundario-carta ul {
     gap: 40px;
   }
- 
+
   .nav-secundario-carta button {
     font-size: 18px;
   }
- 
+
   .categoria-titulo {
     font-size: 30px;
   }
- 
+
   .plato {
     grid-template-columns: 220px 1fr;
     column-gap: 40px;
   }
- 
+
   .plato-info h3 {
     font-size: 24px;
   }
- 
+
   .plato-precio {
     font-size: 20px;
+  }
+  .dato-contacto {
+    gap: 40px;
   }
 }
 
@@ -964,7 +962,6 @@ color:#fff;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
     grid-template-areas:
       "hero hero hero"
       "main main main"
@@ -1095,12 +1092,18 @@ color:#fff;
   .entrante .plato1 {
     justify-content: start;
   }
-
+  .plato1,
+  .plato3 p {
+    text-align: left;
+  }
   .entrante .plato2 {
     justify-content: end;
     flex-flow: row;
   }
 
+  .plato2 p {
+    text-align: right;
+  }
   .entrante .plato3 {
     justify-content: start;
   }
@@ -1133,7 +1136,7 @@ color:#fff;
   }
   main {
     grid-area: main;
-    padding: 100px 50px;
+    padding: 30px 50px;
   }
 
   footer {
@@ -1149,14 +1152,14 @@ color:#fff;
    PARTE C · ESCRITORIO
    Pegar DENTRO de tu @media (min-width: 1024px) and (max-width: 1920px) { ... }
    ========================================================= */
- 
+
   /* Todos: Entrantes y Principales lado a lado */
   .carta {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 80px;
   }
- 
+
   /* Si solo hay una categoría, sus 2 platos van en dos columnas */
   .categoria:only-child {
     grid-column: 1 / 3;
@@ -1164,20 +1167,82 @@ color:#fff;
     grid-template-columns: 1fr 1fr;
     column-gap: 80px;
   }
- 
+
   .categoria:only-child .categoria-titulo {
     grid-column: 1 / 3;
   }
- 
+
   .carta-error {
     grid-column: 1 / 3;
   }
 
-/* Carta */
-  .contenedor-formulario {
-  
-  grid-template-columns: auto 1fr;
-  column-gap: 150px;
-}
+  /* Carta */
 
+  /* Formulario COntacto */
+
+  .contenedor-contacto {
+    grid-template-areas:
+      "hero hero hero"
+      "main main main"
+      "cta cta cta"
+      "footer footer footer";
+  }
+
+  .cta {
+    grid-area: cta;
+    gap: 3%;
+  }
+  .contenedor-texto {
+    text-align: center;
+    margin-bottom: 120px;
+  }
+  .contenedor-texto-secundario {
+    text-align: revert;
+    margin-bottom: initial;
+  }
+  .contenedor-text p {
+    margin: 0 auto;
+    width: 50%;
+  }
+  .contenedor-formulario {
+    grid-template-columns: auto 1fr;
+    gap: 100px;
+  }
+  .formulario-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "nombre email"
+      "asunto asunto"
+      "mensaje mensaje"
+      "boton boton";
+
+    gap: 30px;
+    column-gap: 70px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .campo-nombre {
+    grid-area: nombre;
+  }
+  .campo-email {
+    grid-area: email;
+  }
+  .campo-asunto {
+    grid-area: asunto;
+  }
+  .campo-mensaje {
+    grid-area: mensaje;
+  }
+  .boton-enviar {
+    padding: 2px 20px;
+    background-color: #000;
+    color: #fff;
+  }
+
+  .formulario-contacto .boton-enviar {
+    grid-area: boton;
+    justify-self: end;
+  }
 }
