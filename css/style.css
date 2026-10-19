@@ -230,10 +230,10 @@ header {
   position: relative;
 }
 .hero--inicio{
-  background-image: url("../img/platos-raiz/entrante/berenjenas-almagro_11_11.webp");
+  background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
 }
 .hero--contacto {
-  background-image: url("../img/platos-raiz/bebidas/licor-lavanda_3_11zon.webp");
+  background-image: url("../img/menu/bebidas/licor-guindas.webp");
   background-position: center;
   background-size: cover;
 }
@@ -340,7 +340,7 @@ footer a {
 
 footer {
   /* background-color: var(--color-primary-blue-700); */
-  background-image: url("../img/platos-raiz/berenjenas-de-almagro_11_11zon.webp");
+  background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
   background-attachment: fixed;
   background-position: bottom;
   background-size: cover;

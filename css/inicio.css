@@ -29,10 +29,10 @@
 }
 .entrantes img,
 .vinos img {
+  aspect-ratio: 1/1;
   clip-path: circle(47% at 50% 50%);
   width: 65%;
   border-radius: 50%;
-  object-fit: cover;
 }
 
 .patrocinadores {
@@ -225,6 +225,7 @@
     max-height: 500px;
     object-fit: contain;
     max-width: 500px;
+    transform: translateX(-70px);
   }
 }
 
@@ -232,7 +233,7 @@
   .boton--reserva {
     font-size: 15px;
   }
-  .bloque-texto--inicio{
+  .bloque-texto--inicio {
     text-align: left;
   }
   /* Presentación: texto a la izquierda, foto a la derecha */
