@@ -7,7 +7,7 @@ const PLATOS_EN_TODOS = 1;
 const PLATOS_POR_CATEGORIA = 2;
 
 const contenedorCarta = document.querySelector("#carta");
-const botonesCategoria = document.querySelectorAll(".menu-nav-secundario button");
+const botonesCategoria = document.querySelectorAll(".carta-filtros__boton");
 
 /* Aquí se guardan los datos una vez descargados */
 let datos = null;
@@ -26,7 +26,7 @@ async function cargarDatos() {
   } catch (error) {
     console.error(error);
     contenedorCarta.innerHTML =
-      '<p class="carta-error">No se pudo cargar la carta. Inténtalo de nuevo más tarde.</p>';
+      '<p class="carta__error">No se pudo cargar la carta. Inténtalo de nuevo más tarde.</p>';
   }
 }
 
@@ -40,17 +40,17 @@ function crearPlato(plato) {
   let alergenos = "";
 
   if (plato.alergenos.length > 0) {
-    alergenos = '<p class="plato-alergenos">Alérgenos: ' + plato.alergenos.join(", ") + "</p>";
+    alergenos = '<p class="plato__alergenos">Alérgenos: ' + plato.alergenos.join(", ") + "</p>";
   }
 
   return `
     <article class="plato">
       <img src="${plato.imagen}" alt="${plato.alt}">
-      <div class="plato-info">
+      <div class="plato__info">
         <h3>${plato.nombre}</h3>
-        <p class="plato-descripcion">${plato.descripcion}</p>
+        <p class="plato__descripcion">${plato.descripcion}</p>
         ${alergenos}
-        <p class="plato-precio">${formatearPrecio(plato.precio)}</p>
+        <p class="plato__precio">${formatearPrecio(plato.precio)}</p>
       </div>
     </article>
   `;
@@ -66,7 +66,7 @@ function crearCategoria(idCategoria, limite) {
 
   return `
     <section class="categoria">
-      <h2 class="categoria-titulo">${categoria.nombre}</h2>
+      <h2 class="categoria__titulo">${categoria.nombre}</h2>
       ${platos.map(crearPlato).join("")}
     </section>
   `;
