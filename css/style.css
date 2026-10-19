@@ -218,7 +218,7 @@ header {
 /* ---- Hero (variantes: --inicio, --carta, --contacto) ---- */
 .hero {
   width: 100%;
-  background-image: url("../img/platos-raiz/berenjenas-de-almagro_11_11zon.webp");
+  background-image: "";
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -228,6 +228,9 @@ header {
   justify-content: center;
   align-items: flex-end;
   position: relative;
+}
+.hero--inicio{
+  background-image: url("../img/platos-raiz/entrante/berenjenas-almagro_11_11.webp");
 }
 .hero--contacto {
   background-image: url("../img/platos-raiz/bebidas/licor-lavanda_3_11zon.webp");
