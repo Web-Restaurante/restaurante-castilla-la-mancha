@@ -1,0 +1,341 @@
+/* =====================================================
+   inicio.css — solo index.html
+   Slider, entrantes, vinos, patrocinadores y botón de reserva del hero
+   ===================================================== */
+
+/* ---- Botón de reserva (hero) ---- */
+.boton--reserva {
+  display: block;
+  padding: 8px 15px;
+  letter-spacing: 0.8px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.boton--reserva:hover {
+  color: var(--color-primary-orange-100);
+}
+
+/* ---- Entrantes ---- */
+.entrantes div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.entrantes .entrantes__item--2,
+.entrantes .entrantes__item--3 {
+  display: none;
+}
+.entrantes img,
+.vinos img {
+  clip-path: circle(47% at 50% 50%);
+  width: 65%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.patrocinadores {
+  font-size: 10px;
+  margin-bottom: 0;
+}
+
+/* ---- Slider ---- */
+.slider__marco {
+  max-width: 850px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider__imagenes {
+  display: flex;
+  aspect-ratio: 16/9;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slider__marco img {
+  width: 100%;
+  flex: 0 0 100%;
+  object-fit: cover;
+  object-position: center top;
+  scroll-snap-align: center;
+}
+
+.slider__imagenes::-webkit-scrollbar {
+  display: none;
+}
+
+/* Btn navegacion Primario */
+.slider__flechas {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.slider__flecha {
+  width: 40px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0;
+  border-color: transparent;
+  background-color: transparent;
+  color: #fff;
+  opacity: 0.5;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  pointer-events: auto;
+}
+
+.slider__flecha:hover {
+  color: var(--color-primary-orange-700);
+  opacity: 1;
+}
+
+/* Btn Navegacion Secundario */
+.slider__puntos {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translateX(-50%);
+}
+
+.slider__punto {
+  width: 5rem;
+  height: 3px;
+  background-color: white;
+  border-radius: 2%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.slider__punto:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.slider__punto.activo {
+  opacity: 1;
+}
+
+/* ---- Entrantes (layout) ---- */
+.entrantes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entrantes p {
+  text-align: center;
+}
+
+/* ---- Vinos ---- */
+.vinos {
+  display: flex;
+  flex-direction: row;
+}
+
+.vinos p {
+  width: 50%;
+  padding: 20px 0;
+  margin-bottom: 0;
+}
+
+.vinos__semicirculo--izquierda,
+.vinos__semicirculo--derecha {
+  overflow: hidden;
+}
+
+.vinos__semicirculo--izquierda {
+  /* clip-path: ellipse(65% 48% at 0% 50%); */
+  clip-path: circle(42% at 17% 50%);
+}
+.vinos__semicirculo--derecha {
+  clip-path: circle(42% at 83% 50%);
+}
+.vinos__semicirculo--izquierda img,
+.vinos__semicirculo--derecha img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transform: translateX(-60px);
+}
+.vinos__semicirculo--derecha img {
+  transform: translateX(60px);
+}
+
+/* ---- Patrocinadores ---- */
+.patrocinadores img {
+  width: 180px;
+}
+
+.patrocinadores div {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.patrocinadores .logo-patrocinador--movil {
+  width: 140px;
+}
+.patrocinadores .logo-patrocinador--escritorio {
+  display: none;
+}
+.patrocinadores img:nth-child(3) {
+  margin-bottom: 25px;
+}
+
+@media (min-width: 600px) {
+  .entrantes img {
+    width: 40%;
+    max-width: 400px;
+  }
+
+  .vinos {
+    justify-content: center;
+  }
+
+  .vinos p {
+    width: 40%;
+  }
+
+  .vinos__semicirculo--izquierda img,
+  .vinos__semicirculo--derecha img {
+    height: 300px;
+    max-height: 500px;
+    object-fit: contain;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  .boton--reserva {
+    font-size: 15px;
+  }
+  .bloque-texto--inicio{
+    text-align: left;
+  }
+  /* Presentación: texto a la izquierda, foto a la derecha */
+  .slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas:
+      "etiqueta  carrusel"
+      " titulo carrusel"
+      "linea  carrusel"
+      "texto carrusel";
+    column-gap: 80px;
+  }
+
+  .slider .etiqueta {
+    grid-area: etiqueta;
+  }
+
+  .slider h3 {
+    grid-area: titulo;
+    font-size: 48px;
+    line-height: 1.3;
+  }
+
+  .slider .linea-decorativa {
+    grid-area: linea;
+    margin: 2rem 0;
+  }
+
+  .slider p {
+    grid-area: texto;
+    max-width: 480px;
+  }
+
+  .slider .slider__marco {
+    grid-area: carrusel;
+    width: 100%;
+  }
+
+  .slider__imagenes {
+    aspect-ratio: 4/3;
+  }
+
+  .entrantes {
+    margin: 120px 0;
+  }
+
+  .entrantes p {
+    max-width: 500px;
+  }
+  .entrantes .entrantes__item--1,
+  .entrantes .entrantes__item--2,
+  .entrantes .entrantes__item--3 {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    gap: 50px;
+    width: 100%;
+  }
+
+  .entrantes .entrantes__item--1 {
+    justify-content: start;
+  }
+  .entrantes__item--1,
+  .entrantes__item--3 p {
+    text-align: left;
+  }
+  .entrantes .entrantes__item--2 {
+    justify-content: end;
+    flex-flow: row;
+  }
+
+  .entrantes__item--2 p {
+    text-align: right;
+  }
+  .entrantes .entrantes__item--3 {
+    justify-content: start;
+  }
+
+  .vinos {
+    display: none;
+  }
+
+  .patrocinadores div {
+    margin-top: 50px;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6.25rem;
+  }
+
+  .patrocinadores .logo-patrocinador--escritorio {
+    width: 400px;
+  }
+
+  .patrocinadores div .logo-patrocinador--movil {
+    display: none;
+  }
+  .patrocinadores div .logo-patrocinador--escritorio {
+    display: block;
+  }
+
+  .patrocinadores img {
+    width: 300px;
+  }
+}
