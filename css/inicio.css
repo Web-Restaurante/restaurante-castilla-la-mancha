@@ -3,18 +3,7 @@
    Slider, entrantes, vinos, patrocinadores y botón de reserva del hero
    ===================================================== */
 
-/* ---- Botón de reserva (hero) ---- */
-.boton--reserva {
-  display: block;
-  padding: 8px 15px;
-  letter-spacing: 0.8px;
-  line-height: 30px;
-  text-transform: uppercase;
-}
 
-.boton--reserva:hover {
-  color: var(--color-primary-orange-100);
-}
 
 /* ---- Entrantes ---- */
 .entrantes div {

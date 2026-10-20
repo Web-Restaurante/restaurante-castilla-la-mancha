@@ -43,7 +43,15 @@
   width: 50%;
   object-fit: cover;
 }
+.cta--2{
+  justify-self: center;
+  padding: 30px;
+}
 
+.boton--contacto{
+  border-color: #000;
+  margin: 0;
+}
 /* ---- Cuerpo: datos + formulario ---- */
 .contacto__cuerpo {
   display: grid;
@@ -64,6 +72,7 @@
       "hero hero hero"
       "main main main"
       "cta cta cta"
+      "cta-2 cta-2 cta-2"
       "footer footer footer";
   }
 
@@ -72,6 +81,11 @@
     gap: 3%;
   }
 
+  .cta--2{
+    grid-area:cta-2;
+    padding: 100px;
+  }
+  
   /* ⚠ SIN EFECTO (typo): .contenedor-text no existe. Si quieres el párrafo centrado
   al 50%, cambia el selector por `.bloque-texto p`.
     .contenedor-text p {
