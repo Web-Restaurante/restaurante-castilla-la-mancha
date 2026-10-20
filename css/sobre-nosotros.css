@@ -4,3 +4,32 @@
    ===================================================== */
 
 /* Reutiliza lo común de style.css: .bloque-texto, .etiqueta, .linea-decorativa, .boton, .formulario */
+/* Bloque de texto */
+  .bloque-texto {
+    text-align: center;
+    margin-bottom: 120px;
+  }
+  /* ---- Etiqueta, línea decorativa y títulos ---- */
+.etiqueta {
+  font-size: 10px;
+  margin-bottom: 0;
+}
+
+
+.linea-decorativa {
+  display: block;
+  color: var(--color-primary-orange-700);
+  border-top: 2px solid #873d12;
+  width: 50px;
+  margin: 1rem auto 2rem auto;   }
+
+  .button {
+  font-family: var(--font-body-family);
+  }
+
+  .formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
