@@ -57,6 +57,9 @@ main {
     justify-content: end;
     flex-flow: row;
   }
+  .entrantes__item--2 p{
+   text-align: right;
+  }
   .entrantes .entrantes__item--3 {
     justify-content: start;
   }
