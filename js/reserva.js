@@ -58,6 +58,8 @@ telefono.addEventListener("input", function () {
         );
     }
 });
+
+//Validar Fecha
 const fecha = document.getElementById("fecha");
 const hoy = new Date();
 const anio = hoy.getFullYear();
