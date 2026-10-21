@@ -242,9 +242,9 @@
   .hero--inicio{
     background-image: url("../img/home/paisaje-campo.png");
   }
-  /* .hero--contacto {
-  background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
-  } */
+  .hero--contacto {
+  background-image: url("../img/contacto/paisaje-molinos2.png");
+  }
   .hero::before {
     content: "";
     position: absolute;
@@ -356,6 +356,7 @@
   /* Section */
   /* LLama a la accion */
   .cta {
+    background-image: url("../img/fondos-raiz/fondo-blanconaranja.svg");
     display: flex;
     flex-flow: row;
     padding: 20px;
