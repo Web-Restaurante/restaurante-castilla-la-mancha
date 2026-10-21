@@ -55,29 +55,46 @@
   text-transform: uppercase;
 }
 
-/* Plato: foto a la izquierda, información a la derecha */
-.plato {
+/* Categoría: UNA foto a la izquierda y la lista de platos a la derecha */
+.categoria__contenido {
   display: grid;
   grid-template-columns: 38% 1fr;
   column-gap: 20px;
   align-items: start;
-  margin-bottom: 30px;
 }
 
-.plato img {
+.categoria__imagen {
   width: 100%;
   aspect-ratio: 7/8;
   object-fit: cover;
 }
 
-.plato__info h3 {
+/* Cada plato: barra gruesa, nombre, línea fina, descripción corta y precio */
+.plato {
+  margin-bottom: 25px;
+}
+
+.plato:last-child {
+  margin-bottom: 0;
+}
+
+.plato::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  margin-bottom: 10px;
+  background-color: #000;
+}
+
+.plato h3 {
   padding-bottom: 8px;
   border-bottom: 1px solid #000;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.2;
 }
 
-.plato__info p {
+.plato p {
   padding: 0;
 }
 
@@ -91,7 +108,7 @@
 }
 
 .plato__precio {
-  margin-top: 10px;
+  margin-top: 8px;
   font-family: var(--font-heading-family);
   font-size: 16px;
 }
@@ -160,13 +177,13 @@
     font-size: 30px;
   }
 
-  .plato {
+  .categoria__contenido {
     grid-template-columns: 220px 1fr;
     column-gap: 40px;
   }
 
-  .plato__info h3 {
-    font-size: 24px;
+  .plato h3 {
+    font-size: 22px;
   }
 
   .plato__precio {
@@ -192,31 +209,43 @@
     column-gap: 80px;
   }
 
-  /* Si solo hay una categoría, sus 2 platos van en dos columnas */
-  .categoria:only-child {
-    grid-column: 1 / 3;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
+  /* En "Todos" cada columna es estrecha: foto más pequeña */
+  .categoria__contenido {
+    grid-template-columns: 38% 1fr;
+    column-gap: 30px;
   }
 
-  .categoria:only-child .categoria__titulo {
+  .plato h3 {
+    font-size: 20px;
+  }
+
+  /* Si solo hay una categoría: ocupa todo el ancho, foto a la izquierda y 4 platos a la derecha */
+  .categoria:only-child {
     grid-column: 1 / 3;
+  }
+
+  .categoria:only-child .categoria__contenido {
+    grid-template-columns: 340px 1fr;
+    column-gap: 60px;
+  }
+
+  .categoria:only-child .plato h3 {
+    font-size: 24px;
   }
 
   .carta__error {
     grid-column: 1 / 3;
   }
 
-   .cta-carta img {
-   max-height: 350px;
+  .cta-carta img {
+    max-height: 350px;
   }
 
-  .cta-carta p{
+  .cta-carta p {
     width: 85%;
   }
 
-  .boton--carta{
+  .boton--carta {
     align-self: self-start;
   }
 }

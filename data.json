@@ -1,4 +1,4 @@
- {
+{
   "restaurante": {
     "nombre": "Raiz culinaria",
     "frase": "La memoria del territorio manchego, reinterpretada en cada bocado.",
@@ -26,28 +26,28 @@
         "nombre": "Cuerva",
         "precio": 6.50,
         "descripcion": "Bebida tradicional de Castilla-La Mancha, elaborada a base de vino, frutas y otros ingredientes que aportan un sabor fresco, dulce y aromático. Es una bebida típica para compartir y disfrutar en reuniones y celebraciones.",
-        "alergenos": ["sulfitos"] 
-        
-  
-      
+        "descripcion_corta": "Bebida manchega de vino y frutas, fresca y aromática.",
+        "alergenos": ["sulfitos"]
       },
-    
       {
         "nombre": "Licor de guindas",
         "precio": 5.50,
         "descripcion": "Licor tradicional elaborado a partir de guindas maceradas, con un sabor dulce, intenso y ligeramente ácido. Aromático y agradable, ideal para disfrutar como digestivo después de una buena comida.",
+        "descripcion_corta": "Licor de guindas maceradas, dulce y ligeramente ácido.",
         "alergenos": []
       },
       {
         "nombre": "Licor de lavanda",
         "precio": 6.00,
         "descripcion": "Licor aromático elaborado con lavanda, de sabor suave, floral y ligeramente dulce. Una bebida delicada y elegante, ideal para disfrutar como digestivo después de una comida.",
+        "descripcion_corta": "Licor de lavanda, suave, floral y ligeramente dulce.",
         "alergenos": []
       },
       {
         "nombre": "Licor de resoli",
         "precio": 6.00,
         "descripcion": "Licor tradicional de Cuenca, elaborado a base de café, aguardiente, azúcar y diferentes especias. De sabor dulce, intenso y aromático, es perfecto para disfrutar como digestivo después de una buena comida.",
+        "descripcion_corta": "Licor conquense de café y especias, dulce e intenso.",
         "alergenos": []
       }
     ],
@@ -56,18 +56,21 @@
         "nombre": "Zurracapote",
         "precio": 6.50,
         "descripcion": "Bebida tradicional de Castilla-La Mancha elaborada a base de vino, azúcar, frutas y especias. De sabor dulce, afrutado y aromático, es perfecta para compartir y disfrutar en celebraciones y reuniones.",
+        "descripcion_corta": "Vino con frutas y especias, dulce y afrutado.",
         "alergenos": ["sulfitos"]
       },
       {
         "nombre": "Vino Tinto D.O. La Mancha (Tempranillo Crianza)",
         "precio": 14.00,
         "descripcion": "Vino tinto estructurado y con cuerpo, envejecido en barrica de roble. Destaca por sus notas de frutos rojos maduros, vainilla y especias, ideal para maridar con carnes de caza y guisos tradicionales.",
+        "descripcion_corta": "Tempranillo crianza con notas de frutos rojos y vainilla.",
         "alergenos": ["sulfitos"]
       },
       {
         "nombre": "Vino Blanco D.O. Uclés (Verdejo)",
         "precio": 11.50,
         "descripcion": "Vino blanco joven y muy expresivo. Ofrece aromas frutales y herbáceos con una acidez equilibrada y un final fresco, excelente para acompañar ensaladas, platos con bacalao o pisto.",
+        "descripcion_corta": "Verdejo joven, frutal y fresco, con final equilibrado.",
         "alergenos": ["sulfitos"]
       }
     ],
@@ -76,42 +79,49 @@
         "nombre": "Albóndigas de jabalí al azafrán",
         "precio": 13.50,
         "descripcion": "Albóndigas elaboradas con carne de jabalí y aromatizadas con azafrán, acompañadas de una salsa sabrosa y delicadamente especiada. Un plato de carácter intenso que combina tradición y elegancia.",
+        "descripcion_corta": "Albóndigas de jabalí con salsa de azafrán.",
         "alergenos": ["gluten", "huevo"]
       },
       {
         "nombre": "Berenjenas de Almagro",
         "precio": 8.50,
         "descripcion": "Berenjenas tradicionales de Almagro aliñadas con vinagre, aceite de oliva, ajo, comino y especias. De sabor intenso, ligeramente ácido y muy aromático, son un clásico de la gastronomía manchega.",
+        "descripcion_corta": "Berenjenas aliñadas con vinagre, ajo y comino.",
         "alergenos": []
       },
       {
         "nombre": "Ensalada de la tierra",
         "precio": 9.00,
         "descripcion": "Fresca y sencilla ensalada elaborada con productos de la tierra, como tomate, cebolla, pimiento y aceitunas, aliñada con aceite de oliva virgen extra. Ligera, sabrosa y perfecta para acompañar cualquier plato.",
+        "descripcion_corta": "Tomate, cebolla, pimiento y aceitunas con aceite de oliva.",
         "alergenos": []
       },
       {
         "nombre": "Huevo sobre parfait",
         "precio": 12.50,
         "descripcion": "Huevo cocinado suavemente sobre una base cremosa y delicada, acompañado de ingredientes seleccionados que aportan contraste de texturas y sabores. Una propuesta elegante que combina tradición y cocina contemporánea.",
-        "alergenos": ["huevo", "lacteos"]
+        "descripcion_corta": "Huevo suave sobre una base cremosa de parfait.",
+        "alergenos": ["huevo", "lácteos"]
       },
       {
         "nombre": "Pintada en escabeche con miel de la Alcarria",
         "precio": 15.50,
         "descripcion": "Pintada cocinada en un delicado escabeche y acompañada con miel de La Alcarria, creando un equilibrio entre sabores ácidos, dulces y aromáticos. Una propuesta elegante que combina tradición y productos emblemáticos de Castilla-La Mancha.",
+        "descripcion_corta": "Pintada en escabeche con miel de La Alcarria.",
         "alergenos": ["sulfitos"]
       },
       {
         "nombre": "Pipirrana con lomo de atún",
         "precio": 14.50,
         "descripcion": "Fresca pipirrana elaborado con tomate, pimiento, cebolla y aceite de oliva, acompañada de un jugoso lomo de atún. Una combinación ligera y sabrosa que une frescura y tradición.",
+        "descripcion_corta": "Pipirrana fresca con jugoso lomo de atún.",
         "alergenos": ["pescado"]
       },
       {
         "nombre": "Ajoarriero de Cuenca",
         "precio": 12.50,
         "descripcion": "Plato tradicional conquense elaborado con bacalao, patata, ajo, huevo y aceite de oliva. Cremoso, sabroso y con un intenso sabor tradicional, es uno de los platos más representativos de la gastronomía de Cuenca.",
+        "descripcion_corta": "Bacalao, patata, ajo y huevo, cremoso y tradicional.",
         "alergenos": ["pescado", "huevo"]
       }
     ],
@@ -120,51 +130,59 @@
         "nombre": "Atascaburras",
         "precio": 10.50,
         "descripcion": "Plato tradicional de Castilla-La Mancha elaborado con bacalao, patata, ajo y aceite de oliva. Cremoso, sabroso y de esencia campesina, representa uno de los sabores más auténticos de la cocina manchega.",
-        "alergenos": ["pescado", "frutos_de_cascara"]
+        "descripcion_corta": "Crema campesina de bacalao, patata y ajo.",
+        "alergenos": ["pescado", "frutos de cáscara"]
       },
       {
         "nombre": "Carcamusas",
         "precio": 12.50,
         "descripcion": "Guiso tradicional de Toledo elaborado con carne de cerdo, tomate, verduras y un toque de especias. Un plato casero, sabroso y reconfortante, representativo de la cocina castellano-manchega.",
+        "descripcion_corta": "Guiso toledano de cerdo, tomate y verduras.",
         "alergenos": ["gluten"]
       },
       {
         "nombre": "Migas manchegas",
         "precio": 10.50,
         "descripcion": "Plato tradicional de Castilla-La Mancha elaborado con migas de pan, ajo, aceite de oliva y productos de la tierra. Sabrosas y reconfortantes, son un clásico de la cocina manchega y una muestra de su tradición rural.",
+        "descripcion_corta": "Migas de pan con ajo y productos de la tierra.",
         "alergenos": ["gluten"]
       },
       {
         "nombre": "Morteruelo de Cuenca",
         "precio": 12.50,
         "descripcion": "Elaborado con carnes de caza, hígado, pan rallado y especias, cocinados lentamente hasta conseguir una textura cremosa y un sabor intenso. Un plato tradicional de Cuenca, contundente y lleno de carácter.",
+        "descripcion_corta": "Guiso cremoso de caza, hígado y especias.",
         "alergenos": ["gluten"]
       },
       {
         "nombre": "Patas de vaca estofadas al estilo tradicional",
         "precio": 18.50,
         "descripcion": "Guiso meloso de patas de ternera cocinadas a fuego lento con hortalizas de la huerta conquense, pimentón de la Vera y un toque sutil de guindilla. Un plato contundente que rescata la casquería fina de la región.",
+        "descripcion_corta": "Patas de ternera estofadas con hortalizas y pimentón.",
         "alergenos": ["gluten", "sulfitos"]
       },
       {
         "nombre": "Pisto manchego",
         "precio": 9.50,
         "descripcion": "Plato tradicional de Castilla-La Mancha elaborado con tomate, pimiento, calabacín, cebolla y aceite de oliva. Cocinado lentamente para concentrar sus sabores, es una receta sencilla, casera y llena de tradición manchega.",
+        "descripcion_corta": "Tomate, pimiento, calabacín y cebolla cocinados despacio.",
         "alergenos": []
-      } 
+      }
     ],
     "postres": [
       {
         "nombre": "Azafrán cheesecake",
         "precio": 7.50,
         "descripcion": "Cremosa tarta de queso aromatizada con azafrán, que aporta un delicado toque floral y especiado. Un postre elegante que combina la tradición manchega con una propuesta dulce y contemporánea.",
-        "alergenos": ["gluten", "lacteos", "huevo"]
+        "descripcion_corta": "Cremosa tarta de queso aromatizada con azafrán.",
+        "alergenos": ["gluten", "lácteos", "huevo"]
       },
       {
         "nombre": "Bizcochada manchega",
         "precio": 6.50,
         "descripcion": "Postre tradicional de Castilla-La Mancha elaborado con bizcochos bañados en leche aromatizada con canela y limón.",
-        "alergenos": ["gluten", "lacteos", "huevo"]
+        "descripcion_corta": "Bizcochos bañados en leche con canela y limón.",
+        "alergenos": ["gluten", "lácteos", "huevo"]
       }
     ]
   }
