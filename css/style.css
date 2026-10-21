@@ -58,14 +58,14 @@
     --color-primary-yellow-50: #faf4ea;
 
     /* Color Primario | Verde */
-    --color-primary-verde-700: #565742;
-    --color-primary-verde-main: #828363; /* <-- Main */
-    --color-primary-verde-500: #90916e;
-    --color-primary-verde-400: #a6a78b;
-    --color-primary-verde-300: #bcbda8;
-    --color-primary-verde-200: #d3d3c5;
-    --color-primary-verde-100: #e9e9e2;
-    --color-primary-verde-50: #f4f4f0;
+    --color-primary-green-700: #565742;
+    --color-primary-green-main: #828363; /* <-- Main */
+    --color-primary-green-500: #90916e;
+    --color-primary-green-400: #a6a78b;
+    --color-primary-green-300: #bcbda8;
+    --color-primary-green-200: #d3d3c5;
+    --color-primary-green-100: #e9e9e2;
+    --color-primary-green-50: #f4f4f0;
 
     /* Color Primario | Azul */
     --color-primary-blue-700: #494c50;
@@ -241,6 +241,9 @@
   }
   .hero--inicio{
     background-image: url("../img/home/paisaje-campo.png");
+  }
+  .hero--carta{
+    background-image: url("../img/carta/Festín\ mediterráneo\ bajo\ el\ sol.png");
   }
   .hero--reserva{
     background-image: url("../img/reserva/reserva-mesa.jpg");

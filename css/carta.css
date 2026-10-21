@@ -113,19 +113,38 @@
 .carta-vinos {
   padding: 20px;
 }
+
+.bloque-texto {
+  display: flex;
+  flex-flow: column;
+}
 .boton--carta {
   display: block;
   width: fit-content;
-  background-color: var(--color-primary-orange-700);
-  border-color: var(--color-primary-orange-700);
+  background-color: var(--color-primary-orange-main);
+  border-color: var(--color-primary-orange-main);
   padding: 8px 15px;
   letter-spacing: 0.8px;
   line-height: 30px;
-  margin: 20px auto 40px;
+  margin: 20px 0;
+  border-radius: 30px;
+  color: #fff;
+
+  align-self: self-end;
 }
 
 .boton--carta:hover {
-  color: #fff;
+  background-color: var(--color-primary-orange-600);
+  border-color: var(--color-primary-orange-600);
+}
+.cta-carta {
+  flex-flow: column;
+  background-image: none;
+  margin: 50px 0;
+}
+.cta-carta img {
+  aspect-ratio: 16/9;
+  width: 100%;
 }
 
 @media (min-width: 600px) {
@@ -153,6 +172,16 @@
   .plato__precio {
     font-size: 20px;
   }
+
+  .cta-carta {
+    flex-flow: row;
+    background-image: none;
+  }
+  .cta-carta img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    width: 50%;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1920px) {
@@ -177,5 +206,17 @@
 
   .carta__error {
     grid-column: 1 / 3;
+  }
+
+   .cta-carta img {
+   max-height: 350px;
+  }
+
+  .cta-carta p{
+    width: 85%;
+  }
+
+  .boton--carta{
+    align-self: self-start;
   }
 }
