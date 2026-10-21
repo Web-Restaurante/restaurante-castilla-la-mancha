@@ -228,7 +228,7 @@
   /* ---- Hero (variantes: --inicio, --carta, --contacto) ---- */
   .hero {
     width: 100%;
-  background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
+  background-image: url("../img/carta/otros/berenjenas-almagro.webp");
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
