@@ -242,6 +242,9 @@
   .hero--inicio{
     background-image: url("../img/home/paisaje-campo.png");
   }
+  .hero--reserva{
+    background-image: url("../img/reserva/reserva-mesa.jpg");
+  }
   .hero--contacto {
   background-image: url("../img/contacto/paisaje-molinos2.png");
   }
