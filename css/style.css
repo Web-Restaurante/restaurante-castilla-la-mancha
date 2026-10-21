@@ -4,7 +4,7 @@
     formulario genérico y footer. 
     
     Lo específico de cada página está en css/<pagina>.css
-    ===================================================== */
+    ======================================= ============== */
 
   /* Selecciona todos los elementos, antes y después */
   *,
@@ -240,7 +240,7 @@
     position: relative;
   }
   .hero--inicio{
-    background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
+    background-image: url("../img/home/paisaje-campo.png");
   }
   /* .hero--contacto {
   background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
@@ -382,7 +382,7 @@
 
   footer {
     /* background-color: var(--color-primary-blue-700); */
-    background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
+    background-image: url("../img/fondos-raiz/fondo-amarillo.svg");
     background-attachment: fixed;
     background-position: bottom;
     background-size: cover;
@@ -394,7 +394,7 @@
     padding: 20px 30px;
   }
 
-  footer::before {
+  /* footer::before {
     content: "";
     position: absolute;
     top: 0;
@@ -402,7 +402,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-  }
+  } */
 
   footer > * {
     z-index: 10;

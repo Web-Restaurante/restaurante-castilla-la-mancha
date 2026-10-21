@@ -22,6 +22,7 @@
   clip-path: circle(47% at 50% 50%);
   width: 65%;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .patrocinadores {
@@ -38,17 +39,17 @@
 
 .slider__imagenes {
   display: flex;
-  aspect-ratio: 16/9;
+  aspect-ratio: 1/1;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  object-fit: cover;
 }
 
 .slider__marco img {
   width: 100%;
   flex: 0 0 100%;
   object-fit: cover;
-  object-position: center top;
   scroll-snap-align: center;
 }
 
