@@ -4,3 +4,90 @@
    ===================================================== */
 
 /* Reutiliza lo común de style.css: .bloque-texto, .etiqueta, .linea-decorativa, .boton, .formulario */
+.main--reserva .reservas {
+  margin: 0;
+}
+
+.boton--reserva--formulario {
+  align-self: center;
+  margin: 50px;
+  text-transform: uppercase;
+}
+
+.etiqueta-texto--reserva {
+  color: var(--color-primary-orange-main);
+  margin: 10px 0;
+}
+
+/* Lista desplegable campos del formulario */
+
+.main--reserva .formulario__campo select {
+  width: 100%;
+  padding: 4px 0;
+  border: none;
+  border-bottom: 1px solid #888;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: var(--font-body-family);
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+}
+
+.main--reserva .formulario__campo select:focus {
+  outline: none;
+  border-bottom: 2px solid var(--color-primary-orange-main);
+}
+
+
+/* Mensaje de confirmación de reserva */
+.mensaje-confirmacion {
+    padding: 15px;
+    margin: 20px 0 0;
+    background-color: #e1f5e5;
+    border: 1px solid #8acb98;
+    border-radius: 5px;
+    color: #216e35;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Ocultamos el mensaje inicialmente */
+.mensaje-confirmacion[hidden] {
+    display: none;
+}
+
+
+@media (min-width: 600px) {
+  .main--reserva .formulario__campo select {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  .reservas {
+    padding: 70px;
+  }
+  .main--reserva {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    gap: 100px;
+  }
+
+  .bloque-texto {
+    margin: 20px 0;
+    text-align: left;
+  }
+
+  .linea-decorativa {
+    text-align: left;
+    margin: 2rem 0;
+  }
+  .boton--reserva--formulario {
+    align-self: flex-start;
+    margin: 50px 0;
+
+    background-color: var(--color-primary-orange-main);
+    border-color: var(--color-primary-orange-main);
+  }
+}

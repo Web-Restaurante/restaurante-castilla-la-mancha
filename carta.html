@@ -17,14 +17,14 @@
 <body>
     <header>
         <a href="index.html">
-            <img class="logo logo--negro" src="img/logos-raiz/logo-negativo.png" alt="Raíz Culinaria">
-            <img class="logo logo--blanco" src="img/logos-raiz/Mesa de trabajo 2_3@logo.png" alt="Raíz Culinaria">
+            <img class="logo logo--negro" src="img/logos/svg/logo-h-negro.svg" alt="Raíz Culinaria">
+            <img class="logo logo--blanco" src="img/logos/svg/logo-h-blanco.svg" alt="Raíz Culinaria">
         </a>
 
         <!-- Navegación escritorio -->
         <nav class="nav nav--escritorio" aria-label="Principal">
             <ul class="nav__lista nav__lista--escritorio">
-                <li><a href="carta.html" aria-current="page">Carta</a></li>
+                <li><a href="carta.html">Carta</a></li>
                 <li><a href="reserva.html">Reserva</a></li>
                 <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -35,7 +35,7 @@
         <nav class="nav nav--movil" aria-label="Principal (móvil)">
             <button type="button" class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
             <ul class="nav__lista nav__lista--movil">
-                <li><a href="carta.html" aria-current="page">Carta</a></li>
+                <li><a href="carta.html">Carta</a></li>
                 <li><a href="reserva.html">Reserva</a></li>
                 <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -43,9 +43,11 @@
         </nav>
     </header>
 
+
     <!-- Hero -->
     <div class="hero hero--carta">
-        <p class="hero__texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966,</p>
+        <p class="hero__texto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+            has been the industry's standard dummy text ever since 1966,</p>
     </div>
 
     <main>
@@ -53,8 +55,10 @@
         <nav class="carta-filtros" aria-label="Categorías de la carta">
             <ul class="carta-filtros__lista">
                 <li><button type="button" class="carta-filtros__boton activo" data-categoria="todos">Todos</button></li>
-                <li><button type="button" class="carta-filtros__boton" data-categoria="entrantes">Entrantes</button></li>
-                <li><button type="button" class="carta-filtros__boton" data-categoria="principales">Principales</button></li>
+                <li><button type="button" class="carta-filtros__boton" data-categoria="entrantes">Entrantes</button>
+                </li>
+                <li><button type="button" class="carta-filtros__boton" data-categoria="principales">Principales</button>
+                </li>
                 <li><button type="button" class="carta-filtros__boton" data-categoria="postres">Postres</button></li>
                 <li><button type="button" class="carta-filtros__boton" data-categoria="bodega">Bodega</button></li>
             </ul>
@@ -74,11 +78,15 @@
         <span class="linea-decorativa"></span>
         <span class="etiqueta">Vinos</span>
         <h3>Vinos de Castilla-La Mancha</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966,</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since 1966,</p>
         <a class="boton boton--carta" href="#">Descubrir bodega <span aria-hidden="true">⟶</span></a>
     </div>
+    <!-- Footer -->
     <footer>
+
         <section class="pie__principal">
+
             <div class="pie__horarios">
                 <h5>Horario</h5>
                 <p>Lunes a Viernes 13:00 a 23:00</p>
@@ -87,25 +95,48 @@
 
             <div class="pie__redes">
                 <h5>Síguenos</h5>
+
                 <div>
-                    <a href="https://www.instagram.com/raiz.culinaria/?hl=es"><img src="img/iconos/instagram-blanco.png" alt="Instagram"></a>
-                    <a href="https://www.facebook.com/raizculinaria.castillalamancha/?locale=es_ES"><img src="img/iconos/facebook-blanco.png" alt="Facebook"></a>
-                    <a href="https://www.youtube.com/@turismo_castillalamancha/videos"><img src="img/iconos/youtube-blanco.png" alt="YouTube"></a>
-                    <a href="https://raizculinaria.castillalamancha.es/es"><img src="img/iconos/web-blanco.png" alt="Web oficial"></a>
+                    <a href="https://www.instagram.com/raiz.culinaria/?hl=es" target="_blank">
+                        <img class="icon--blanco" src="img/iconos/instagram-blanco.png" alt="Instagram">
+                        <img class="icon--naranja" src="img/iconos/instagram-naranja.png" alt="Instagram">
+
+                    </a>
+
+                    <a href="https://www.facebook.com/raizculinaria.castillalamancha/?locale=es_ES" target="_blank">
+                        <img class="icon--blanco" src="img/iconos/facebook-blanco.png" alt="Facebook">
+                        <img class="icon--naranja" src="img/iconos/facebook-naranja.png" alt="Facebook">
+                    </a>
+
+                    <a href="https://www.youtube.com/@turismo_castillalamancha/videos" target="_blank">
+                        <img class="icon--blanco" src="img/iconos/youtube-blanco.png" alt="YouTube">
+                        <img class="icon--naranja" src="img/iconos/youtube-naranja.png" alt="YouTube">
+                    </a>
+
+                    <a href="https://raizculinaria.castillalamancha.es/es" target="_blank">
+                        <img class="icon--blanco" src="img/iconos/web-blanco.png" alt="Web oficial">
+                        <img class="icon--naranja" src="img/iconos/web-naranja.png" alt="Web oficial">
+                    </a>
                 </div>
             </div>
 
             <div class="pie__logo">
                 <a href="index.html">
-                    <img class="logo" src="img/logos-raiz/Mesa de trabajo 2_3@logo.png" alt="Raíz Culinaria Castilla-La Mancha">
+                    <img class="logo" src="img/logos/svg/logo-h-blanco.svg" alt="Raíz Culinaria Castilla-La Mancha">
                 </a>
             </div>
+
         </section>
 
         <section class="pie__legal">
             <div class="pie__textos-legales">
-                <small>© Restaurante Castilla-La Mancha,
-                    <a href="https://github.com/Web-Restaurante/restaurante-castilla-la-mancha" target="_blank" rel="noopener noreferrer">BrennanDzz</a></small>
+
+                <small>
+
+                    <a href="https://github.com/Web-Restaurante/restaurante-castilla-la-mancha" target="_blank"
+                        rel="noopener noreferrer">© Restaurante Castilla - La Mancha</a>
+                </small>
+
                 <ul>
                     <li>Política de privacidad</li>
                     <li>Política de reembolso</li>
@@ -113,9 +144,12 @@
                     <li>Información de contacto</li>
                     <li>Aviso legal</li>
                 </ul>
+
             </div>
         </section>
+
     </footer>
+    <!-- Footer -->
 
     <script src="js/script.js"></script>
     <script src="js/carta.js"></script>

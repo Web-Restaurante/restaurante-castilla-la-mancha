@@ -1,483 +1,89 @@
-/* =====================================================
-   style.css — estilos COMUNES a todas las páginas
-   Reset, variables, tipografía, cabecera, hero, botones, bloque de texto,
-   formulario genérico y pie. Lo específico de cada página está en css/<pagina>.css
-   ===================================================== */
+  /* =====================================================
+    style.css — estilos COMUNES a todas las páginas
+    Reset, variables, tipografía, cabecera, hero, botones, bloque de texto,
+    formulario genérico y footer. 
+    
+    Lo específico de cada página está en css/<pagina>.css
+    ===================================================== */
 
-/* Selecciona todos los elementos, antes y después */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  /* Incluye el padding y border en el ancho total */
-  margin: 0;
-  /* Elimina márgenes heredados */
-  padding: 0;
-  /* Elimina rellenos heredados */
-}
+  /* Selecciona todos los elementos, antes y después */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    /* Incluye el padding y border en el ancho total */
+    margin: 0;
+    padding: 0;
+  }
 
-/* ---- Variables ---- */
-/* Variables */
-:root {
-  /* Heading */
-  --font-heading-family: "brandon-grotesque", sans-serif;
-  --font-heading-style: normal;
-  --font-heading-weight: 400;
-  --font-heading-weight-bold: 700;
-  --font-heady-size-mobile: 30px;
-  --font-heady-size-desktop: 40px;
+  /* ---- Variables ---- */
+  /* Variables */
+  :root {
+    /* Heading */
+    --font-heading-family: "brandon-grotesque", sans-serif;
+    --font-heading-style: normal;
+    --font-heading-weight: 400;
+    --font-heading-weight-bold: 700;
+    --font-heady-size-mobile: 30px;
+    --font-heady-size-desktop: 45px;
 
-  /* Text */
-  --font-body-family: "baskerville-display-pt", serif;
-  --font-body-style: normal;
-  --font-body-weight: 400;
-  --font-body-weight-bold: 700;
-  --font-body-size-mobile: 12px;
-  --font-body-size-desktop: 18px;
+    /* Text */
+    --font-body-family: "baskerville-display-pt", serif;
+    --font-body-style: normal;
+    --font-body-weight: 400;
+    --font-body-weight-bold: 700;
+    --font-body-size-mobile: 14px;
+    --font-body-size-desktop: 18px;
 
-  /* Paleta de colores */
+    /* Paleta de colores */
 
-  /* Color Primario | Naranja */
-  --color-primary-orange-700: #873d12;
-  --color-primary-orange-600: #b45118;
-  --color-primary-orange-main: #e57b3d; /* <-- Main */
-  --color-primary-orange-400: #e7844b;
-  --color-primary-orange-300: #eda378;
-  --color-primary-orange-200: #f3c2a5;
-  --color-primary-orange-100: #f9e0d2;
-  --color-primary-orange-50: #fcf0e9;
+    /* Color Primario | Naranja */
+    --color-primary-orange-700: #873d12;
+    --color-primary-orange-600: #b45118;
+    --color-primary-orange-main: #e57b3d; /* <-- Main */
+    --color-primary-orange-400: #e7844b;
+    --color-primary-orange-300: #eda378;
+    --color-primary-orange-200: #f3c2a5;
+    --color-primary-orange-100: #f9e0d2;
+    --color-primary-orange-50: #fcf0e9;
 
-  /* Color Primario | Amarillo */
-  --color-primary-yellow-700: #7d591c;
-  --color-primary-yellow-600: #a67726;
-  --color-primary-yellow-500: #d0952f;
-  --color-primary-yellow-main: #d9aa59; /* <-- Main */
-  --color-primary-yellow-300: #e3bf82;
-  --color-primary-yellow-200: #ecd5ac;
-  --color-primary-yellow-100: #f6ead5;
-  --color-primary-yellow-50: #faf4ea;
+    /* Color Primario | Amarillo */
+    --color-primary-yellow-700: #7d591c;
+    --color-primary-yellow-600: #a67726;
+    --color-primary-yellow-500: #d0952f;
+    --color-primary-yellow-main: #d9aa59; /* <-- Main */
+    --color-primary-yellow-300: #e3bf82;
+    --color-primary-yellow-200: #ecd5ac;
+    --color-primary-yellow-100: #f6ead5;
+    --color-primary-yellow-50: #faf4ea;
 
-  /* Color Primario | Verde */
-  --color-primary-verde-700: #565742;
-  --color-primary-verde-main: #828363; /* <-- Main */
-  --color-primary-verde-500: #90916e;
-  --color-primary-verde-400: #a6a78b;
-  --color-primary-verde-300: #bcbda8;
-  --color-primary-verde-200: #d3d3c5;
-  --color-primary-verde-100: #e9e9e2;
-  --color-primary-verde-50: #f4f4f0;
+    /* Color Primario | Verde */
+    --color-primary-verde-700: #565742;
+    --color-primary-verde-main: #828363; /* <-- Main */
+    --color-primary-verde-500: #90916e;
+    --color-primary-verde-400: #a6a78b;
+    --color-primary-verde-300: #bcbda8;
+    --color-primary-verde-200: #d3d3c5;
+    --color-primary-verde-100: #e9e9e2;
+    --color-primary-verde-50: #f4f4f0;
 
-  /* Color Primario | Azul */
-  --color-primary-blue-700: #494c50;
-  --color-primary-blue-main: #696c71; /* <-- Main */
-  --color-primary-blue-500: #d0952f;
-  --color-primary-blue-400: #d9aa59;
-  --color-primary-blue-300: #e3bf82;
-  --color-primary-blue-200: #ecd5ac;
-  --color-primary-blue-100: #f6ead5;
-  --color-primary-blue-50: #faf4ea;
+    /* Color Primario | Azul */
+    --color-primary-blue-700: #494c50;
+    --color-primary-blue-main: #696c71; /* <-- Main */
+    --color-primary-blue-500: #d0952f;
+    --color-primary-blue-400: #d9aa59;
+    --color-primary-blue-300: #e3bf82;
+    --color-primary-blue-200: #ecd5ac;
+    --color-primary-blue-100: #f6ead5;
+    --color-primary-blue-50: #faf4ea;
 
-  /* Line Height */
+    /* Line Height */
 
-  --line-height: 1.8;
-  --margin-bottom: 10px;
-}
+    --line-height: 1.8;
+    --margin-bottom: 10px;
+  }
 
-/* ---- Generales ---- */
-/* Generales */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading-family);
-  font-weight: var(--font-heading-weight);
-  font-style: var(--font-heading-style);
-}
-
-p,
-span,
-li,
-small,
-a {
-  font-size: var(--font-body-size-mobile);
-  font-family: var(--font-body-family);
-  line-height: var(--line-height);
-  margin-bottom: var(--margin-bottom);
-  font-weight: var(--font-body-weight);
-  font-style: var(--font-body-style);
-}
-
-a {
-  margin-bottom: 0;
-  text-decoration: none;
-  color: #000;
-}
-a:hover {
-  cursor: pointer;
-}
-ul li {
-  list-style: none;
-  margin-bottom: 0;
-}
-
-li a {
-  text-decoration: none;
-  font-size: 20px;
-}
-/* --- */
-
-/* Todos los botones usan la fuente del cuerpo */
-button {
-  font-family: var(--font-body-family);
-}
-
-/* ---- Contenedor ---- */
-.contenedor {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "header"
-    "hero"
-    "main"
-    "footer";
-}
-
-/* ---- Cabecera y navegación ---- */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  grid-area: header;
-  position: relative;
-  width: 100%;
-  padding: 20px;
-}
-
-.nav__toggle {
-  display: block;
-  background: none;
-  border: none;
-  font-size: 3.75rem;
-  cursor: pointer;
-  color: black;
-  margin-bottom: 0;
-}
-
-.logo {
-  padding-top: 20px;
-  width: 230px;
-}
-
-.logo--blanco {
-  display: none;
-}
-
-.nav--escritorio {
-  display: none;
-}
-
-.nav__lista--movil {
-  display: none;
-}
-.nav__lista--movil.abierto {
-  display: flex;
-  flex-flow: column wrap;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  box-shadow: 0px -2px var(--color-primary-yellow-main);
-  z-index: 50;
-  width: 100%;
-  padding-left: 40px;
-  background-color: #fff;
-}
-
-.nav__lista--movil li {
-  width: 85%;
-}
-.nav__lista--movil li a {
-  padding: 12px 0;
-  display: block;
-}
-
-.nav__lista--movil li:hover {
-  border-bottom: 2px solid var(--color-primary-yellow-main);
-}
-
-.nav__lista--movil li:hover a {
-  color: var(--color-primary-yellow-main);
-}
-
-.nav__lista--movil li:last-child {
-  border-bottom: none;
-}
-
-/* ---- Hero (variantes: --inicio, --carta, --contacto) ---- */
-.hero {
-  width: 100%;
- background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
-  background-position: right;
-  background-size: cover;
-  background-repeat: no-repeat;
-  grid-area: hero;
-  min-height: 80svh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: relative;
-}
-.hero--inicio{
-  background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
-}
-/* .hero--contacto {
- background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
-} */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-/* La variante --contacto vive aquí (y no en contacto.css) a propósito:
-   el @media de escritorio de más abajo redefine .hero y debe ir DESPUÉS. */
-
-/* ---- Botón (.boton) y variantes ---- */
-.boton {
-  margin-bottom: 40px;
-  border-radius: 30px;
-  border: 1px solid #fff;
-  background-color: #fff;
-  z-index: 15;
-}
-
-.boton:hover {
-  background-color: var(--color-primary-orange-700);
-  border-color: var(--color-primary-orange-700);
-}
-/* ---- Botón de reserva (hero) ---- */
-.boton--reserva {
-  display: block;
-  padding: 8px 15px;
-  letter-spacing: 0.8px;
-  line-height: 30px;
-  text-transform: uppercase;
-}
-
-.boton--reserva:hover {
-  color: var(--color-primary-orange-100);
-}
-
-/* Variante: enviar formulario */
-.boton--enviar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  align-self: flex-start;
-
-  padding: 2px 10px;
-  letter-spacing: 0.8px;
-  line-height: 10px;
-
-  cursor: pointer;
-  margin: 0;
-
-  background-color: var(--color-primary-orange-700);
-  border-color: var(--color-primary-orange-700);
-}
-
-.boton--enviar {
-  color: var(--color-primary-orange-100);
-}
-.boton--enviar:hover {
-  color: #000;
-}
-.boton--enviar span {
-  margin: 0;
-  font-size: 20px;
-  padding-bottom: 7px;
-}
-
-/* ---- Main ---- */
-main,
-footer section {
-  padding: 20px 30px;
-}
-main section {
-  margin-bottom: 50px;
-}
-
-p {
-  padding: 20px 0;
-  font-size: var(--font-body-size-mobile);
-}
-
-/* ---- Etiqueta, línea decorativa y títulos ---- */
-.etiqueta {
-  font-size: 10px;
-  margin-bottom: 0;
-}
-.linea-decorativa {
-  display: block;
-  color: var(--color-primary-orange-700);
-  border-top: 2px solid #873d12;
-  width: 50px;
-  margin: 1rem auto 2rem auto;
-}
-h3 {
-  font-size: 20px;
-}
-.etiqueta {
-  text-transform: uppercase;
-}
-
-/* ---- Pie de página ---- */
-footer section {
-  color: #fff;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-footer a {
-  color: #fff;
-}
-
-footer {
-  /* background-color: var(--color-primary-blue-700); */
-  background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
-  background-attachment: fixed;
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 0;
-  display: flex;
-  flex-flow: column;
-  position: relative;
-  padding: 20px 30px;
-}
-
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-footer > * {
-  z-index: 10;
-}
-footer p {
-  padding: 0;
-}
-
-footer h5 {
-  margin-bottom: 10px;
-}
-/* Section Primario */
-
-footer .pie__logo img {
-  padding: 0;
-  width: 230px;
-}
-.pie__principal {
-  display: flex;
-  overflow: hidden;
-  flex-flow: column-reverse;
-  border-bottom: 1.5px solid #fff;
-}
-
-.pie__logo {
-  order: 2;
-}
-
-.pie__logo a {
-  display: block;
-  margin: auto;
-  width: fit-content;
-}
-.pie__horarios {
-  order: 1;
-  margin-top: -10px;
-}
-
-.pie__principal div {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.pie__principal .pie__redes img {
-  width: 30px;
-}
-
-.pie__redes div {
-  display: flex;
-  flex-flow: row wrap;
-  column-gap: 15px;
-  justify-content: center;
-}
-
-/* Section Secundario */
-
-.pie__legal ul {
-  display: none;
-}
-
-.pie__legal div {
-  display: flex;
-  justify-content: center;
-}
-
-.pie__legal small {
-  font-size: 12px;
-  margin: 0 auto;
-}
-
-/* ---- Formulario genérico (reutilizable) ---- */
-.formulario {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.formulario__campo {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.formulario__campo label {
-  font-family: var(--font-body-family);
-}
-
-.formulario__campo input,
-textarea {
-  width: 100%;
-  padding: 12px 0;
-  border: none;
-  border-bottom: .5px solid #000;
-  border-radius: 0;
-  background: transparent;
-  font-family: var(--font-body-family);
-  font-size: 16px;
-  outline: none;
-}
-
-/* Línea cuando el usuario selecciona el campo */
-.formulario__campo input:focus,
-textarea:focus {
-  border-bottom: 2px solid var(--color-primary-orange-main);
-}
-
-@media (min-width: 600px) {
+  /* ---- Generales ---- */
   /* Generales */
   h1,
   h2,
@@ -485,8 +91,9 @@ textarea:focus {
   h4,
   h5,
   h6 {
-    font-size: var(--font-heady-size-desktop);
-    line-height: 1;
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    font-style: var(--font-heading-style);
   }
 
   p,
@@ -494,126 +101,583 @@ textarea:focus {
   li,
   small,
   a {
-    font-size: var(--font-body-size-desktop);
+    font-size: var(--font-body-size-mobile);
+    font-family: var(--font-body-family);
+    line-height: var(--line-height);
+    margin-bottom: var(--margin-bottom);
+    font-weight: var(--font-body-weight);
+    font-style: var(--font-body-style);
   }
 
-  .linea-decorativa {
-    width: 150px;
-    margin: 2rem auto 3rem auto;
-    border-width: 3.5px;
+  span{
+    text-transform: uppercase;
+    font-size: 12px;
   }
 
-  /* Formulario */
-  .formulario {
-    max-width: 800px;
-  }
-
-  footer h5 {
+  small{
     font-size: 13px;
+    letter-spacing: 0.5px;
   }
-}
 
-@media (min-width: 1024px) and (max-width: 1920px) {
-  /* Contenedor */
-  /* Contenedor */
+  a {
+    margin-bottom: 0;
+    text-decoration: none;
+    color: #000;
+  }
+  a:hover {
+    cursor: pointer;
+  }
+  ul li {
+    list-style: none;
+    margin-bottom: 0;
+  }
+
+  li a {
+    text-decoration: none;
+    font-size: 20px;
+  }
+  /* --- */
+
+  /* Todos los botones usan la fuente del cuerpo */
+  button {
+    font-family: var(--font-body-family);
+  }
+
+  /* ---- Contenedor ---- */
   .contenedor {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "hero hero hero"
-      "main main main"
-      "footer footer footer";
+      "header"
+      "hero"
+      "main"
+      "footer";
   }
 
-  .logo--negro {
-    display: none;
+  /* ---- Cabecera y navegación ---- */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: header;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .nav__toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 3.75rem;
+    cursor: pointer;
+    color: black;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    padding-top: 20px;
+    width: 230px;
   }
 
   .logo--blanco {
+    display: none;
+  }
+
+  .nav--escritorio {
+    display: none;
+  }
+
+  .nav__lista--movil {
+    display: none;
+  }
+  .nav__lista--movil.abierto {
+    display: flex;
+    flex-flow: column wrap;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px -2px var(--color-primary-yellow-main);
+    z-index: 50;
+    width: 100%;
+    padding-left: 40px;
+    background-color: #fff;
+  }
+
+  .nav__lista--movil li {
+    width: 85%;
+  }
+  .nav__lista--movil li a {
+    padding: 12px 0;
     display: block;
   }
 
-  header {
+  .nav__lista--movil li:hover {
+    border-bottom: 2px solid var(--color-primary-yellow-main);
+  }
+
+  .nav__lista--movil li:hover a {
+    color: var(--color-primary-yellow-main);
+  }
+
+  .nav__lista--movil li:last-child {
+    border-bottom: none;
+  }
+
+  /* ---- Hero (variantes: --inicio, --carta, --contacto) ---- */
+  .hero {
+    width: 100%;
+  background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-area: hero;
+    min-height: 80svh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+  }
+  .hero--inicio{
+    background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
+  }
+  /* .hero--contacto {
+  background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
+  } */
+  .hero::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 20;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px 40px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
   }
+  /* La variante --contacto vive aquí (y no en contacto.css) a propósito:
+    el @media de escritorio de más abajo redefine .hero y debe ir DESPUÉS. */
 
-  header .logo {
-    width: 260px;
-    padding-top: 0;
+  /* ---- Botón (.boton) y variantes ---- */
+  .boton {
+    margin-bottom: 40px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    z-index: 15;
   }
-
-  .nav--movil {
-    display: none;
+  .boton--contacto{
+    border-color: #000;
+    margin: 0;
+    
   }
-  .nav--escritorio {
+  .boton:hover {
+    background-color: var(--color-primary-orange-600);
+    border-color: var(--color-primary-orange-600);
+  }
+  /* ---- Botón de reserva (hero) ---- */
+  .boton--reserva {
     display: block;
-  }
-
-  .nav__lista--escritorio {
-    display: flex;
-    gap: 50px;
-    margin-top: 25px;
-  }
-
-  .nav--escritorio a {
-    display: block;
-    padding-bottom: 4px;
-    border-bottom: 2px solid transparent;
-    font-family: var(--font-heading-family);
-    font-size: 16px;
-    letter-spacing: 1px;
+    padding: 8px 15px;
+    letter-spacing: 0.8px;
+    line-height: 30px;
     text-transform: uppercase;
+    position: absolute;
+     bottom: -60px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+  }
+
+  .boton--reserva:hover {
+    color: var(--color-primary-orange-100);
+  }
+
+  /* Variante: enviar formulario */
+  .boton--enviar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    align-self: flex-start;
+     text-transform: uppercase;
+    padding: 2px 10px;
+    letter-spacing: 0.8px;
+    line-height: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 50px;
+
+    background-color: var(--color-primary-orange-main);
+    border-color: var(--color-primary-orange-main);
+  }
+
+  .boton--enviar {
+    color: var(--color-primary-orange-100);
+  }
+ 
+  .boton--enviar span {
+    margin: 0;
+    font-size: 20px;
+    padding-bottom: 7px;
+  }
+
+  /* ---- Main ---- */
+  main,
+  footer section {
+    padding: 70px 30px 20px 30px;
+  }
+  main section {
+    margin-bottom: 80px;
+  }
+
+  p {
+    padding: 20px 0;
+    font-size: var(--font-body-size-mobile);
+  }
+
+  /* ---- Etiqueta, línea decorativa y títulos ---- */
+  .etiqueta {
+    margin-bottom: 0;
+  }
+  .linea-decorativa {
+    display: block;
+    color: var(--color-primary-orange-700);
+    border-top: 2px solid #873d12;
+    width: 50px;
+    margin: 1rem auto 2rem auto;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  .etiqueta {
+    text-transform: uppercase;
+  }
+
+  /* Section */
+  /* LLama a la accion */
+  .cta {
+    display: flex;
+    flex-flow: row;
+    padding: 20px;
+    gap: 20px;
+  }
+  .cta img {
+    width: 50%;
+    object-fit: cover;
+  }
+  .cta--2{
+    justify-self: center;
+    padding: 30px;
+  }
+  /* ---- Pie de página ---- */
+  footer section {
     color: #fff;
+    padding: 0;
+    margin-bottom: 20px;
   }
 
-  .nav--escritorio a:hover {
-    border-bottom: 2px solid var(--color-primary-orange-main);
-  }
-
-  /* Hero */
-  .hero {
-    position: relative;
-    height: 100svh;
-    grid-area: hero;
-    background-position: right bottom;
-  }
-
-  main {
-    grid-area: main;
-    padding: 30px 50px;
+  footer a {
+    color: #fff;
   }
 
   footer {
-    grid-area: footer;
+    /* background-color: var(--color-primary-blue-700); */
+    background-image: url("../img/menu/entrantes/berenjenas-almagro.webp");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    padding: 20px 30px;
   }
 
-  footer .pie__principal {
-    width: 1024px;
+  footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  footer > * {
+    z-index: 10;
+  }
+  footer p {
+    padding: 0;
+    letter-spacing: 0.5px;
+  }
+
+  footer h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  /* Section Primario */
+
+  footer .pie__logo img {
+    padding: 0;
+    width: 230px;
+  }
+  .pie__principal {
+    display: flex;
+    overflow: hidden;
+    flex-flow: column-reverse;
+    border-bottom: 1.5px solid #fff;
+  }
+
+  .pie__logo {
+    order: 2;
+  }
+
+  .pie__logo a {
+    display: block;
+    margin: auto;
+    width: fit-content;
+  }
+  .pie__horarios {
+    order: 1;
+    margin-top: -10px;
+  }
+
+  .pie__principal div {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .pie__principal .pie__redes img {
+    width: 30px;
+  }
+
+  .pie__redes div {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 15px;
+    justify-content: center;
+  }
+
+  .pie__redes a:hover .icon--blanco{
+    display: none;
+  }
+  .pie__redes .icon--naranja {
+      display: none;
+  }
+
+
+  .pie__redes a:hover .icon--naranja{
+    display: block;
+
+  }
+  /* Section Secundario */
+
+  .pie__legal ul {
+    display: none;
+  }
+
+  .pie__legal div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pie__legal small {
     margin: 0 auto;
   }
 
-  /* Bloque de texto */
-  .bloque-texto {
-    text-align: center;
-    margin-bottom: 120px;
+  /* ---- Formulario genérico (reutilizable) ---- */
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .bloque-texto--secundario {
-    text-align: revert;
-    margin-bottom: initial;
+  .formulario__campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  /* Botón enviar */
-  .boton--enviar {
-    padding: 2px 20px;
-    background-color: #000;
-    color: #fff;
+  .formulario__campo label {
+    font-family: var(--font-body-family);
   }
-}
+
+  .formulario__campo input,
+  textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: .5px solid #000;
+    border-radius: 0;
+    background: transparent;
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    outline: none;
+  }
+
+  /* Línea cuando el usuario selecciona el campo */
+  .formulario__campo input:focus,
+  textarea:focus {
+    border-bottom: 2px solid var(--color-primary-orange-main);
+  }
+
+  @media (min-width: 600px) {
+    /* Generales */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: var(--font-heady-size-desktop);
+      line-height: 1; 
+    }
+
+    p,
+    li,
+    small,
+    a,label, input {
+      font-size: var(--font-body-size-desktop);
+    }
+
+    span{
+      font-size: 14px;
+    }
+
+    footer a{
+      font-size: 14px;
+    }
+
+    
+
+    .linea-decorativa {
+      width: 150px;
+      margin: 2rem auto 3rem auto;
+      border-width: 3.5px;
+    }
+
+    /* Formulario */
+    .formulario {
+      max-width: 800px;
+    }
+     .boton {
+    font-size: 15px;
+  }
+
+  }
+
+  @media (min-width: 1024px) and (max-width: 1920px) {
+    /* Contenedor */
+    /* Contenedor */
+    .contenedor {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        "hero hero hero"
+        "main main main"
+        "footer footer footer";
+    }
+
+    .logo--negro {
+      display: none;
+    }
+
+    .logo--blanco {
+      display: block;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px 40px;
+    }
+
+    header .logo {
+      width: 260px;
+      padding-top: 0;
+    }
+
+    .nav--movil {
+      display: none;
+    }
+    .nav--escritorio {
+      display: block;
+    }
+
+    .nav__lista--escritorio {
+      display: flex;
+      gap: 50px;
+      margin-top: 25px;
+    }
+
+    .nav--escritorio a {
+      display: block;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      font-family: var(--font-heading-family);
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .nav--escritorio a:hover {
+      border-bottom: 2px solid var(--color-primary-orange-main);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 100svh;
+      grid-area: hero;
+      background-position: right bottom;
+    }
+
+    main {
+      grid-area: main;
+      padding: 70px 50px;
+    }
+
+  .cta {
+      grid-area: cta;
+      gap: 3%;
+    }
+
+    .cta--2{
+      grid-area:cta-2;
+      padding: 100px;
+    }
+
+    footer {
+      grid-area: footer;
+    }
+
+    footer .pie__principal {
+      width: 1024px;
+      margin: 0 auto;
+    }
+
+    /* Bloque de texto */
+    .bloque-texto {
+      text-align: center;
+      margin-bottom: 120px;
+    }
+
+    .bloque-texto--secundario {
+      text-align: revert;
+      margin-bottom: initial;
+    }
+
+    /* Botón enviar */
+    .boton--enviar {
+      padding: 2px 20px;
+    
+      margin: 50px 0;
+    }
+  }

@@ -4,3 +4,65 @@
    ===================================================== */
 
 /* Reutiliza lo común de style.css: .bloque-texto, .etiqueta, .linea-decorativa, .boton, .formulario */
+
+/* ---- Entrantes ---- */
+
+main {
+  padding: 80px 30px 30px;
+}
+
+.entrantes div {
+  display: flex;
+  flex-flow: column-reverse wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.entrantes img {
+  aspect-ratio: 1/1;
+  clip-path: circle(47% at 50% 50%);
+  width: 65%;
+  border-radius: 50%;
+}
+
+.entrantes p {
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .entrantes img {
+    width: 40%;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+  
+  
+   .entrantes .entrantes__item--1,
+  .entrantes .entrantes__item--2,
+  .entrantes .entrantes__item--3 {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    gap: 50px;
+    width: 100%;
+  }
+    .entrantes p {
+        max-width: 500px;
+    }
+  .entrantes .entrantes__item--1 {
+    justify-content: start;
+  }
+  .entrantes .entrantes__item--2 {
+    justify-content: end;
+    flex-flow: row;
+  }
+  .entrantes .entrantes__item--3 {
+    justify-content: start;
+  }
+
+  .entrantes__item--1 p,
+  .entrantes__item--3 p {
+    text-align: left;
+  }
+}

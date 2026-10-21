@@ -8,14 +8,14 @@
 /* ---- Entrantes ---- */
 .entrantes div {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column-reverse wrap;
   justify-content: center;
   align-items: center;
 }
-.entrantes .entrantes__item--2,
+/* .entrantes .entrantes__item--2,
 .entrantes .entrantes__item--3 {
   display: none;
-}
+} */
 .entrantes img,
 .vinos img {
   aspect-ratio: 1/1;
@@ -132,6 +132,7 @@
   align-items: center;
 }
 
+
 .entrantes p {
   text-align: center;
 }
@@ -197,7 +198,7 @@
 @media (min-width: 600px) {
   .entrantes img {
     width: 40%;
-    max-width: 400px;
+    max-width: 300px;
   }
 
   .vinos {
@@ -286,7 +287,7 @@
   .entrantes .entrantes__item--1 {
     justify-content: start;
   }
-  .entrantes__item--1,
+  .entrantes__item--1 p,
   .entrantes__item--3 p {
     text-align: left;
   }
@@ -302,12 +303,12 @@
     justify-content: start;
   }
 
-  .vinos {
+ /*  .vinos {
     display: none;
-  }
+  } */
 
   .patrocinadores div {
-    margin-top: 50px;
+    margin-top: 25px;
     flex-flow: row;
     justify-content: center;
     align-items: center;
@@ -315,7 +316,7 @@
   }
 
   .patrocinadores .logo-patrocinador--escritorio {
-    width: 400px;
+    width: 300px;
   }
 
   .patrocinadores div .logo-patrocinador--movil {
@@ -326,6 +327,6 @@
   }
 
   .patrocinadores img {
-    width: 300px;
+    width: 250px;
   }
 }

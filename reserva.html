@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Reserva tu mesa en Raíz Culinaria y disfruta de la gastronomía de Castilla-La Mancha con producto local.">
+    <title>Reserva | Raíz Culinaria</title>
+
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="https://use.typekit.net/dwj8weh.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qsx1orp.css">
+
+    <!-- CSS común + CSS de esta página -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reserva.css">
+    <link rel="icon" href="img/logos/svg/logo-v-negro.svg" type="image/svg">
+</head>
+
+<body>
+    <div class="contenedor contenedor--reserva">
+
+        <!-- Header -->
+        <header>
+            <a href="index.html">
+                <img class="logo logo--negro" src="img/logos/svg/logo-h-negro.svg" alt="Raíz Culinaria">
+
+                <img class="logo logo--blanco" src="img/logos/svg/logo-h-blanco.svg" alt="Raíz Culinaria">
+            </a>
+
+            <!-- Navegación escritorio -->
+            <nav class="nav nav--escritorio" aria-label="Principal">
+                <ul class="nav__lista nav__lista--escritorio">
+                    <li><a href="carta.html">Carta</a></li>
+                    <li><a href="reserva.html" aria-current="page">Reserva</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Navegación móvil -->
+            <nav class="nav nav--movil" aria-label="Principal (móvil)">
+                <button type="button" class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+                <ul class="nav__lista nav__lista--movil">
+                    <li><a href="carta.html">Carta</a></li>
+                    <li><a href="reserva.html" aria-current="page">Reserva</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Header -->
+
+        <!-- Hero -->
+        <div class="hero hero--inicio">
+
+        </div>
+        <!-- Hero -->
+
+        <!-- Main -->
+        <main class="main--reserva">
+
+            <!-- Bloque texto -->
+            <section>
+                <div class="bloque-texto bloque-texto--inicio bloque-texto--reserva">
+                    <span class="linea-decorativa"></span>
+                    <span class="etiqueta">Reserva</span>
+                    <h3>Vive la experiencia,
+                        <br>ven a visitarnos.
+                    </h3>
+                    <p>Reserva tu mesa y dejate llevar por una propuesta gastronómica única, donde la tradición de
+                        Castilla la Mancha se encuentra con la creatividad de nuestra cocina.</p>
+                </div>
+            </section>
+            <!-- Bloque texto -->
+
+            <section class="reservas">
+                <div class="bloque-texto etiqueta-texto--reserva">
+                    <span class="etiqueta">Reserva tu mesa</span>
+                </div>
+
+
+                <!-- Contenido de reservas -->
+                <div class="reservas__contenido">
+                    <!-- Formulario -->
+
+                    <form class="formulario" action="#" method="post">
+
+                        <div class="formulario__campo formulario__campo--nombre">
+                            <label for="nombre">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name"
+                                maxlength="30" required>
+                        </div>
+
+                        <div class="formulario__campo formulario__campo--telefono">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" autocomplete="tel"
+                                maxlength="9" required>
+                        </div>
+
+                        <div class="formulario__campo formulario__campo--fecha">
+                            <label for="fecha">Fecha *</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+
+                        <!-- <div class="formulario__campo formulario__campo--hora">
+                            <label for="hora">Hora *</label>
+                            <input type="time" id="hora" name="hora" required>
+                        </div> -->
+                        <div class="formulario__campo formulario__campo--hora">
+                            <label for="hora">Hora*</label>
+                            <select id="hora" name="hora" required>
+                                <option value="" selected disabled></option>
+                            </select>
+                        </div>
+                        <!--   <div class="formulario__campo formulario__campo--personas">
+                            <label for="personas">Número de personas *</label>
+                            <input type="number" id="personas" name="personas" placeholder="Número de personas" min="1"
+                                max="4" value="2" required>
+                        </div> -->
+                        <div class="formulario__campo formulario__campo--personas">
+                            <label for="personas">Número de personas*</label>
+                            <select id="personas" name="personas" required>
+                                <option value="" selected disabled></option>
+                            </select>
+                        </div>
+                        <div class="formulario__campo formulario__campo--comentarios">
+                            <label for="comentarios">Comentarios (opcional)</label>
+                            <textarea id="comentarios" name="comentarios" placeholder="¿Alguna petición especial?"
+                                maxlength="250" rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="boton boton--enviar boton--reserva--formulario">
+                            Reservar mesa <span aria-hidden="true">⟶</span>
+                        </button>
+
+                        <p class="mensaje-confirmacion" id="mensaje-confirmacion" hidden>
+                            ✅ Tu reserva ha sido confirmada.
+                        </p>
+
+
+                    </form>
+
+
+                </div>
+            </section>
+
+
+        </main>
+        <!-- Main -->
+
+        <!-- Footer -->
+        <footer>
+
+            <section class="pie__principal">
+
+                <div class="pie__horarios">
+                    <h5>Horario</h5>
+                    <p>Lunes a Viernes 13:00 a 23:00</p>
+                    <p>Sábado y Domingo 13:00 a 00:00</p>
+                </div>
+
+                <div class="pie__redes">
+                    <h5>Síguenos</h5>
+
+                    <div>
+                        <a href="https://www.instagram.com/raiz.culinaria/?hl=es" target="_blank">
+                            <img class="icon--blanco" src="img/iconos/instagram-blanco.png" alt="Instagram">
+                            <img class="icon--naranja" src="img/iconos/instagram-naranja.png" alt="Instagram">
+
+                        </a>
+
+                        <a href="https://www.facebook.com/raizculinaria.castillalamancha/?locale=es_ES" target="_blank">
+                            <img class="icon--blanco" src="img/iconos/facebook-blanco.png" alt="Facebook">
+                            <img class="icon--naranja" src="img/iconos/facebook-naranja.png" alt="Facebook">
+                        </a>
+
+                        <a href="https://www.youtube.com/@turismo_castillalamancha/videos" target="_blank">
+                            <img class="icon--blanco" src="img/iconos/youtube-blanco.png" alt="YouTube">
+                            <img class="icon--naranja" src="img/iconos/youtube-naranja.png" alt="YouTube">
+                        </a>
+
+                        <a href="https://raizculinaria.castillalamancha.es/es" target="_blank">
+                            <img class="icon--blanco" src="img/iconos/web-blanco.png" alt="Web oficial">
+                            <img class="icon--naranja" src="img/iconos/web-naranja.png" alt="Web oficial">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pie__logo">
+                    <a href="index.html">
+                        <img class="logo" src="img/logos/svg/logo-h-blanco.svg" alt="Raíz Culinaria Castilla-La Mancha">
+                    </a>
+                </div>
+
+            </section>
+
+            <section class="pie__legal">
+                <div class="pie__textos-legales">
+
+                    <small>
+
+                        <a href="https://github.com/Web-Restaurante/restaurante-castilla-la-mancha" target="_blank"
+                            rel="noopener noreferrer">© Restaurante Castilla - La Mancha</a>
+                    </small>
+
+                    <ul>
+                        <li>Política de privacidad</li>
+                        <li>Política de reembolso</li>
+                        <li>Política de envío</li>
+                        <li>Información de contacto</li>
+                        <li>Aviso legal</li>
+                    </ul>
+
+                </div>
+            </section>
+
+        </footer>
+        <!-- Footer -->
+    </div>
+
+    <!-- JavaScript común -->
+    <script src="js/script.js"></script>
+
+    <!-- JavaScript de reservas -->
+    <script src="js/reserva.js"></script>
+
+</body>
+
+</html>
