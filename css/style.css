@@ -249,7 +249,7 @@
     background-image: url("../img/reserva/reserva-mesa.webp");
   }
   .hero--contacto {
-  background-image: url("../img/contacto/paisaje-molinos2.png");
+  background-image: url("../img/contacto/paisaje-molinos.webp");
   }
   .hero::before {
     content: "";
